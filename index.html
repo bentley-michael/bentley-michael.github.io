@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nathan Bentley — n8n Automation + API Integrations</title>
+  <meta name="description" content="Done-for-you n8n automations and API integrations. Lead intake, follow-up, webhooks, CRM sync, alerts, and reliability hardening." />
+  <style>
+    :root { --bg:#0b0d12; --card:#121622; --text:#e9ecf1; --muted:#a9b1c3; --line:#232a3a; --accent:#7aa2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
+    a { color:inherit; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 80px; }
+    .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding: 10px 0 24px; }
+    .brand { font-weight:700; letter-spacing:0.2px; }
+    .nav { display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:14px; }
+    .nav a { text-decoration:none; padding:6px 8px; border-radius:10px; }
+    .nav a:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+
+    .hero { padding: 22px 0 18px; }
+    .h1 { font-size: 40px; line-height:1.12; margin:0 0 12px; }
+    .sub { color:var(--muted); font-size: 16px; line-height:1.55; max-width: 760px; margin: 0 0 18px; }
+    .ctaRow { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding: 12px 14px; border-radius: 12px; border:1px solid var(--line); text-decoration:none; font-weight:600; }
+    .btnPrimary { background: var(--accent); color:#0b0d12; border-color: transparent; }
+    .btnPrimary:hover { filter: brightness(1.05); }
+    .btn:hover { background: rgba(255,255,255,0.06); }
+    .trust { margin-top: 14px; color: var(--muted); font-size: 14px; }
+
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 16px; }
+    .card p, .card li { color: var(--muted); font-size: 14px; line-height:1.5; }
+    .span6 { grid-column: span 6; }
+    .span12 { grid-column: span 12; }
+    .span4 { grid-column: span 4; }
+
+    .section { margin-top: 38px; }
+    .section h2 { margin: 0 0 12px; font-size: 22px; }
+    .kicker { color: var(--muted); margin: 0 0 12px; }
+
+    .bullets { margin: 10px 0 0; padding-left: 18px; }
+    .bullets li { margin: 6px 0; }
+
+    .pricing { display:grid; grid-template-columns: repeat(12,1fr); gap:14px; }
+    .price { grid-column: span 4; }
+    .tag { display:inline-block; padding: 4px 8px; border:1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+    .money { font-size: 28px; font-weight: 800; margin: 4px 0 10px; }
+    .small { font-size: 12px; color: var(--muted); }
+
+    .form { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form label { display:block; color: var(--muted); font-size: 12px; margin: 0 0 6px; }
+    .form input, .form textarea, .form select {
+      width:100%; padding: 10px 12px; border-radius: 12px; border:1px solid var(--line);
+      background: rgba(255,255,255,0.03); color: var(--text);
+    }
+    .form textarea { min-height: 120px; resize: vertical; grid-column: 1 / -1; }
+    .form .full { grid-column: 1 / -1; }
+    footer { margin-top: 42px; color: var(--muted); font-size: 12px; border-top:1px solid var(--line); padding-top: 16px; }
+
+    @media (max-width: 860px) {
+      .span6, .span4, .price { grid-column: span 12; }
+      .h1 { font-size: 32px; }
+      .form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">Nathan Bentley — Automation</div>
+      <div class="nav">
+        <a href="#services">Services</a>
+        <a href="#examples">Examples</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1 class="h1">Done-for-you n8n automations + API integrations that remove busywork and stop missed leads.</h1>
+      <p class="sub">
+        I build reliable workflows: lead intake, follow-up, webhooks, CRM sync, alerts, and logging.
+        Delivered as exportable n8n JSON + documentation + handoff video. Remote-friendly.
+      </p>
+      <div class="ctaRow">
+        <!-- Replace with your Calendly -->
+        <a class="btn btnPrimary" href="https://calendly.com/YOUR_LINK" target="_blank" rel="noreferrer">Book a 15-min call</a>
+        <!-- Replace with a Loom/YouTube demo playlist -->
+        <a class="btn" href="#examples">See example automations</a>
+      </div>
+      <div class="trust">Fast turnaround • Clear deliverables • Monitoring available • Based in TN (remote delivery)</div>
+
+      <div class="grid">
+        <div class="card span6">
+          <h3>Common problems I fix</h3>
+          <ul class="bullets">
+            <li>Leads not followed up within minutes</li>
+            <li>Data scattered across tools (Sheets/Notion/CRM/email)</li>
+            <li>Zapier/Make flows that silently fail</li>
+            <li>No error alerts or audit trail</li>
+          </ul>
+        </div>
+        <div class="card span6">
+          <h3>What you get</h3>
+          <ul class="bullets">
+            <li>Working automations in your environment</li>
+            <li>Exportable n8n workflow JSON</li>
+            <li>README: creds + setup + test steps</li>
+            <li>Discord/email failure alerts + logs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p class="kicker">Productized offers. Clear scope. Delivered fast.</p>
+
+      <div class="grid">
+        <div class="card span4">
+          <h3>n8n Setup + 3 Workflows</h3>
+          <p>Best starting point. Replace repetitive admin with automations that actually run.</p>
+          <ul class="bullets">
+            <li>n8n reliability check (creds, env, backups)</li>
+            <li>3 workflows from a menu</li>
+            <li>Discord/email alerts + logging</li>
+          </ul>
+        </div>
+
+        <div class="card span4">
+          <h3>Webhook → CRM Pipeline</h3>
+          <p>Turn events into clean data with idempotency, retries, and an audit trail.</p>
+          <ul class="bullets">
+            <li>Webhook ingestion (FastAPI optional)</li>
+            <li>Dedup/idempotency + retries</li>
+            <li>Route to Sheets/Notion/HubSpot/etc</li>
+          </ul>
+        </div>
+
+        <div class="card span4">
+          <h3>Lead Intake + Instant Follow-up</h3>
+          <p>For contractors and service businesses. Capture leads and respond instantly.</p>
+          <ul class="bullets">
+            <li>Form/phone → CRM sheet</li>
+            <li>Immediate SMS/email follow-up</li>
+            <li>Booking link + internal alerts</li>
+          </ul>
+        </div>
+
+        <div class="card span12">
+          <h3>Workflow menu (pick what you need)</h3>
+          <p>
+            Lead capture • Contact form routing • Gmail parsing • Google Sheets CRM • Notion sync • Discord alerts • Slack alerts •
+            Calendar booking handoff • Webhook receiver • Payment events • Quote/estimate request routing • Daily ops digest • Error monitoring
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="section">
+      <h2>Examples</h2>
+      <p class="kicker">Add screenshots or Loom links. Even 2 examples is enough to start selling.</p>
+      <div class="grid">
+        <div class="card span6">
+          <h3>Example 1: Lead intake → Sheets → Discord</h3>
+          <p>Trigger from form/webhook, normalize data, write to Sheets, alert team channel.</p>
+          <p class="small">Link: replace this with a Loom/YouTube URL.</p>
+        </div>
+        <div class="card span6">
+          <h3>Example 2: Webhook ingestion + dedup + alerts</h3>
+          <p>Store raw events, deduplicate, retry failures, and alert on errors.</p>
+          <p class="small">Link: replace this with a Loom/YouTube URL.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <h2>Process</h2>
+      <div class="grid">
+        <div class="card span6">
+          <h3>1) Quick intake</h3>
+          <p>15 minutes to confirm tools, goals, and the 3 workflows you want first.</p>
+        </div>
+        <div class="card span6">
+          <h3>2) Build + test</h3>
+          <p>Implement, test with sample data, add logging and failure alerts.</p>
+        </div>
+        <div class="card span6">
+          <h3>3) Deploy + handoff</h3>
+          <p>Export JSON + README + handoff video. You own the workflows.</p>
+        </div>
+        <div class="card span6">
+          <h3>4) Optional monitoring</h3>
+          <p>Monthly support: fixes, tweaks, and proactive failure notifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2>Pricing</h2>
+      <p class="kicker">Starting prices. Final quote depends on integrations and complexity.</p>
+
+      <div class="pricing">
+        <div class="card price">
+          <div class="tag">Starter</div>
+          <div class="money">$300</div>
+          <ul class="bullets">
+            <li>1 workflow</li>
+            <li>1 integration</li>
+            <li>Basic logging</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <div class="tag">Standard</div>
+          <div class="money">$750</div>
+          <ul class="bullets">
+            <li>3 workflows</li>
+            <li>Up to 3 integrations</li>
+            <li>Discord/email alerts</li>
+            <li>README + handoff video</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <div class="tag">Premium</div>
+          <div class="money">$1,500+</div>
+          <ul class="bullets">
+            <li>5+ workflows</li>
+            <li>Reliability hardening (retries, dedup)</li>
+            <li>Monitoring + monthly support option</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small">Maintenance/monitoring (optional): $99–$299/mo depending on scope.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="kicker">Fastest: book a call. Or send details below.</p>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="https://calendly.com/YOUR_LINK" target="_blank" rel="noreferrer">Book a 15-min call</a>
+        <a class="btn" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+      </div>
+
+      <!-- Formspree: replace action URL after creating a Formspree form -->
+      <form class="card section" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <div class="form">
+          <div>
+            <label>Your name</label>
+            <input name="name" required />
+          </div>
+          <div>
+            <label>Email</label>
+            <input name="email" type="email" required />
+          </div>
+          <div class="full">
+            <label>What tools are involved? (e.g., n8n, Google Sheets, Gmail, HubSpot, Stripe, etc.)</label>
+            <input name="tools" />
+          </div>
+          <div class="full">
+            <label>What outcome do you want? (be specific)</label>
+            <textarea name="goal" placeholder="Example: When someone submits my contact form, add to Google Sheet CRM, send an SMS follow-up, and alert Discord."></textarea>
+          </div>
+          <div class="full">
+            <button class="btn btnPrimary" type="submit">Request a quote</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div><strong>Privacy:</strong> Credentials stay in your environment. I only use access needed to implement the requested integrations.</div>
+      <div style="margin-top:8px;">© <span id="y"></span> Nathan Bentley • Automation + Integrations</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
