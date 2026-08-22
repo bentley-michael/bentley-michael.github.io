@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nathan Bentley | AI Automation & Integration Systems</title>
+  <title>Michael Bentley | AI Automation & Integration Systems</title>
   <meta
     name="description"
-    content="AI automation, API integrations, n8n workflows, AI voice and chat agents, and FastAPI backend systems for small businesses."
+    content="Michael Bentley builds practical AI automation systems, API integrations, n8n workflows, AI voice agents, and FastAPI backends for small businesses."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -672,21 +672,44 @@
         transition: none;
       }
     }
+    .hero-subtext {
+      margin-top: 12px;
+      color: #d2dbeb;
+      font-size: 0.97rem;
+      line-height: 1.7;
+    }
+
+    .featured-card {
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .panel-label-spaced {
+      margin-bottom: 10px;
+    }
+
+    .contact-accent-link {
+      color: var(--accent);
+    }
+
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="Nathan Bentley home">
+      <a class="brand" href="#top" aria-label="Michael Bentley home">
         <span class="brand-mark"></span>
-        <span>Nathan Bentley</span>
+        <span>Michael Bentley</span>
       </a>
       <nav class="nav" aria-label="Primary">
+        <a href="#featured">Featured Build</a>
         <a href="#services">Services</a>
         <a href="#use-cases">Use Cases</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
   </header>
@@ -694,34 +717,38 @@
   <main id="top">
     <div class="shell">
       <section class="hero fade-up" aria-labelledby="hero-title">
-        <div class="eyebrow">AI consulting for practical growth systems</div>
+        <div class="eyebrow">AI systems builder &amp; automation consultant</div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title">AI Automation &amp; Integration Systems for Small Businesses</h1>
+            <h1 id="hero-title">I Build the Automation Systems That Keep Small Businesses Running</h1>
             <p>
-              I design and build practical AI workflows, API integrations, and backend systems that
-              reduce manual work and capture more opportunities.
+              Practical AI workflows, API integrations, and backend systems that reduce manual work,
+              close response gaps, and connect the tools you already depend on.
+            </p>
+            <p class="hero-subtext">
+              From lead intake pipelines and AI voice agents to n8n orchestration and FastAPI backends —
+              I design, build, and ship operational systems, not slide decks.
             </p>
             <div class="cta-row">
-              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a discovery call</a>
-              <a class="button-secondary" href="#services">Explore services</a>
+              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a 15-minute automation audit</a>
+              <a class="button-secondary" href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">View on GitHub</a>
             </div>
             <div class="signal-row" aria-label="Core focus areas">
               <div class="signal">
                 <strong>Automation that ships</strong>
-                <span>n8n workflows, webhook logic, routing, retries, and operational safeguards.</span>
+                <span>n8n workflows, webhook routing, retries, and operational safeguards built for reliability.</span>
               </div>
               <div class="signal">
                 <strong>Systems that connect</strong>
                 <span>FastAPI backends, third-party APIs, CRMs, inboxes, calendars, and databases.</span>
               </div>
               <div class="signal">
-                <strong>Agents with a job</strong>
-                <span>AI voice and chat agents designed around lead handling, support, and follow-up.</span>
+                <strong>AI agents with a real job</strong>
+                <span>Voice and chat agents built around lead handling, intake, and qualification — not demos.</span>
               </div>
               <div class="signal">
                 <strong>Built for small teams</strong>
-                <span>Lean architecture, clear handoff, and fast iteration without enterprise overhead.</span>
+                <span>Lean, understandable architecture with clear handoff and no unnecessary platform lock-in.</span>
               </div>
             </div>
           </div>
@@ -736,16 +763,16 @@
             </div>
             <ul class="panel-list">
               <li>
-                <strong>Lead capture + follow-up pipelines</strong>
-                <span>Capture form, phone, or ad leads and trigger immediate qualification, routing, and response.</span>
+                <strong>Lead capture &amp; intake pipelines</strong>
+                <span>Capture phone, form, or ad leads and trigger immediate qualification, routing, and response — zero manual steps.</span>
               </li>
               <li>
-                <strong>Backend logic for automation-heavy workflows</strong>
-                <span>Build FastAPI services for webhooks, validation, AI processing, and system orchestration.</span>
+                <strong>Backend orchestration for automation-heavy workflows</strong>
+                <span>FastAPI services handling webhooks, validation, AI processing, and multi-system coordination.</span>
               </li>
               <li>
-                <strong>AI voice and chat automation</strong>
-                <span>Connect LLMs, tools, and business rules into agents that actually help operations move.</span>
+                <strong>AI voice &amp; chat automation</strong>
+                <span>LLMs, telephony, and business rules wired together into agents that handle real operational tasks.</span>
               </li>
             </ul>
             <div class="metrics" aria-label="Service summary">
@@ -759,34 +786,114 @@
               </div>
               <div class="metric">
                 <strong>AI Agents</strong>
-                <span>Voice, chat, qualification, and support</span>
+                <span>Voice, chat, intake, and routing</span>
               </div>
             </div>
           </aside>
         </div>
       </section>
 
+      <section id="featured" class="section fade-up" aria-labelledby="featured-title">
+        <div class="section-head">
+          <div class="section-kicker">Featured Build</div>
+          <h2 id="featured-title">Featured System: AnsweredCallAI</h2>
+          <p>
+            A production AI automation system built to handle missed-call lead intake, urgency routing,
+            and multi-channel follow-up — without a human in the loop.
+          </p>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-diagram" aria-label="AnsweredCallAI system overview">
+            <h3>How it works</h3>
+            <div class="flow">
+              <div class="flow-step">
+                <div class="flow-index">01</div>
+                <div>
+                  <strong>Missed call triggers the workflow</strong>
+                  <span>Inbound missed calls fire a webhook that immediately initiates the intake pipeline — no delay, no manual step.</span>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-index">02</div>
+                <div>
+                  <strong>AI voice agent handles the callback</strong>
+                  <span>An AI voice agent calls the lead, collects structured information, and determines urgency using business-defined rules.</span>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-index">03</div>
+                <div>
+                  <strong>Lead data captured and classified</strong>
+                  <span>Contact details, intent, and urgency signals are extracted and stored in a structured format for downstream routing.</span>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-index">04</div>
+                <div>
+                  <strong>SMS &amp; email notifications routed instantly</strong>
+                  <span>High-priority leads trigger immediate alerts; standard leads enter automated follow-up sequences via n8n workflows.</span>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-index">05</div>
+                <div>
+                  <strong>Full workflow orchestration via n8n + FastAPI</strong>
+                  <span>n8n handles orchestration and integrations; a FastAPI backend processes AI responses, manages state, and exposes internal APIs.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card featured-card">
+            <div>
+              <div class="panel-label panel-label-spaced">System capabilities</div>
+              <ul class="bullet-list">
+                <li>AI missed-call intake and lead capture</li>
+                <li>Urgency detection and priority routing</li>
+                <li>SMS and email notification pipelines</li>
+                <li>AI voice agent with structured data extraction</li>
+                <li>n8n workflow orchestration</li>
+                <li>FastAPI backend for business logic and state</li>
+                <li>Multi-channel follow-up sequences</li>
+              </ul>
+            </div>
+            <div>
+              <div class="panel-label panel-label-spaced">Tech stack</div>
+              <div class="stack-tags">
+                <span class="stack-tag">FastAPI</span>
+                <span class="stack-tag">n8n</span>
+                <span class="stack-tag">AI Voice</span>
+                <span class="stack-tag">Twilio</span>
+                <span class="stack-tag">OpenAI</span>
+                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">Webhooks</span>
+                <span class="stack-tag">SMS / Email</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="services" class="section fade-up" aria-labelledby="services-title">
         <div class="section-head">
           <div class="section-kicker">Services</div>
-          <h2 id="services-title">Focused delivery across the systems that matter</h2>
+          <h2 id="services-title">Systems that remove friction from your operations</h2>
           <p>
-            I build the connective layer between your tools, your operations, and the AI capabilities
-            that make them more useful.
+            Each engagement targets a specific operational problem — disconnected tools, slow response,
+            manual handoffs, or missing automation coverage.
           </p>
         </div>
         <div class="card-grid">
           <article class="card">
-            <div class="service-tag">AI automation</div>
-            <h3>Workflow Design &amp; Automation</h3>
+            <div class="service-tag">Workflow automation</div>
+            <h3>Automation Design &amp; Reliability</h3>
             <p>
-              Map repetitive business processes, remove manual handoffs, and implement workflows that
-              stay dependable once they are live.
+              Identify the manual steps costing your team time, design the workflow that eliminates them,
+              and build in the error handling that keeps it running.
             </p>
             <ul class="bullet-list">
               <li>n8n workflow architecture and reliability hardening</li>
               <li>Lead routing, notifications, syncing, and follow-up logic</li>
-              <li>Error handling, observability, and recovery paths</li>
+              <li>Error handling, operational visibility, and recovery paths</li>
             </ul>
           </article>
 
@@ -794,8 +901,8 @@
             <div class="service-tag">API integrations</div>
             <h3>System Integration &amp; Data Flow</h3>
             <p>
-              Connect the tools you already use so data moves cleanly between forms, inboxes, CRMs,
-              payment systems, and internal dashboards.
+              Connect the tools you already use so data moves cleanly — no duplicate entry, no broken
+              pipelines, no gaps between your CRM and the rest of your stack.
             </p>
             <ul class="bullet-list">
               <li>Webhook ingestion, transformation, and routing</li>
@@ -805,30 +912,30 @@
           </article>
 
           <article class="card">
-            <div class="service-tag">Voice + chat agents</div>
-            <h3>AI Agents for Customer Workflows</h3>
+            <div class="service-tag">AI voice &amp; chat</div>
+            <h3>AI Lead Intake &amp; Agent Systems</h3>
             <p>
-              Build practical AI assistants that answer questions, qualify leads, guide intake, and
-              escalate to a human when needed.
+              Build AI voice and chat agents that capture leads, qualify intent, and route to the right
+              outcome — without requiring a human to answer every inquiry.
             </p>
             <ul class="bullet-list">
-              <li>AI voice agent flows for missed calls and lead response</li>
-              <li>Chat agents connected to knowledge, forms, and scheduling</li>
-              <li>Structured prompts, tool use, guardrails, and fallback logic</li>
+              <li>AI voice agents for missed calls and inbound lead response</li>
+              <li>Chat agents connected to knowledge bases, forms, and scheduling</li>
+              <li>Structured data extraction, fallback logic, and human escalation</li>
             </ul>
           </article>
 
           <article class="card">
             <div class="service-tag">Backend systems</div>
-            <h3>FastAPI Backend Development</h3>
+            <h3>FastAPI Backend Infrastructure</h3>
             <p>
-              Ship lightweight backend services that support automations, AI processing, and custom
-              internal logic without unnecessary platform complexity.
+              Lightweight backend services that power automations, AI processing, and internal business
+              logic — deployed and operational, not proof-of-concept.
             </p>
             <ul class="bullet-list">
-              <li>FastAPI endpoints for business workflows and integrations</li>
-              <li>Auth, validation, queues, and background job patterns</li>
-              <li>Deployment-ready services for ongoing operations</li>
+              <li>FastAPI endpoints for workflows, integrations, and orchestration</li>
+              <li>Auth, validation, queues, and background processing patterns</li>
+              <li>Production-ready services built for ongoing operational use</li>
             </ul>
           </article>
         </div>
@@ -837,53 +944,53 @@
       <section id="use-cases" class="section fade-up" aria-labelledby="use-cases-title">
         <div class="section-head">
           <div class="section-kicker">Use Cases</div>
-          <h2 id="use-cases-title">Common systems I help small businesses implement</h2>
+          <h2 id="use-cases-title">Operational problems these systems solve</h2>
           <p>
-            The goal is not to add AI for its own sake. The goal is to move faster, respond faster,
-            and keep opportunities from slipping through gaps in the process.
+            The goal is not AI for its own sake — it's fixing the gaps where leads go cold,
+            manual work piles up, or disconnected tools slow everything down.
           </p>
         </div>
         <div class="use-grid">
           <article class="card">
-            <h3>Lead intake that responds immediately</h3>
+            <h3>Missed-call lead intake</h3>
             <p>
-              Turn website forms, missed calls, and inbound inquiries into structured records with instant
-              follow-up, internal alerts, and booking links.
+              An AI voice agent handles missed calls, collects lead details, and routes based on urgency —
+              leads captured and acted on before a competitor calls back.
             </p>
           </article>
           <article class="card">
-            <h3>AI-powered support and qualification</h3>
+            <h3>Instant lead qualification</h3>
             <p>
-              Use chat or voice agents to answer routine questions, collect structured details, and hand
-              off higher-value conversations with context intact.
+              AI chat or voice agents ask the right questions, extract structured data, and deliver
+              qualified leads to your CRM or inbox with context intact.
             </p>
           </article>
           <article class="card">
             <h3>CRM and inbox synchronization</h3>
             <p>
-              Keep customer records current across forms, email, spreadsheets, CRM platforms, and internal
-              systems without duplicate entry.
+              Keep contact records current across forms, email, spreadsheets, and CRM platforms
+              automatically — no duplicate entry, no stale data.
             </p>
           </article>
           <article class="card">
-            <h3>Operational alerts and exception handling</h3>
+            <h3>Operational alerts and exception routing</h3>
             <p>
-              Route failures, delays, and important events to the right person so workflows stay visible
-              and recoverable instead of silently breaking.
+              Surface failures, delays, and important workflow events to the right person so
+              automation stays visible and recoverable — not silently broken.
             </p>
           </article>
           <article class="card">
-            <h3>Custom backend glue for niche processes</h3>
+            <h3>Custom backend for niche business rules</h3>
             <p>
-              Add the missing API layer when off-the-shelf automation tools are not enough for your business
-              rules, validation, or data shaping.
+              Build the FastAPI layer when off-the-shelf automation tools can't handle your
+              validation logic, data shaping, or multi-system coordination requirements.
             </p>
           </article>
           <article class="card">
-            <h3>Reporting pipelines for owners and operators</h3>
+            <h3>Consolidated operational reporting</h3>
             <p>
-              Consolidate events and outcomes into useful reporting so you can see what is working without
-              stitching the data together manually.
+              Pull events and outcomes from multiple systems into useful, structured reports so
+              owners can see what's working without stitching data together manually.
             </p>
           </article>
         </div>
@@ -962,30 +1069,32 @@
       <section id="about" class="section fade-up" aria-labelledby="about-title">
         <div class="section-head">
           <div class="section-kicker">About</div>
-          <h2 id="about-title">Built for business owners who want useful systems, not demos</h2>
+          <h2 id="about-title">Systems builder. Automation operator. Integration specialist.</h2>
         </div>
         <div class="about-grid">
           <div class="about-copy">
             <p>
-              I focus on practical AI consulting for small businesses that want to automate repetitive work,
-              tighten up operations, and respond faster without hiring a larger internal team.
+              I'm Michael Bentley — I build and operate practical AI automation systems for small businesses
+              that need real operational infrastructure, not consulting decks. My work spans workflow automation,
+              API integrations, AI voice and chat agents, and FastAPI backend development.
             </p>
             <p>
-              That usually means combining workflow automation, API integrations, and lightweight backend
-              engineering into a single system that fits your current tools rather than forcing a full rebuild.
+              I work at the implementation layer: designing for workflow reliability, operational visibility,
+              and lead routing accuracy from the start. AnsweredCallAI is one example of the kind of
+              AI-assisted operations systems I design and deploy.
             </p>
             <p>
-              My approach is straightforward: define the bottleneck, design the flow, build the pieces that
-              matter, and leave you with a system that is understandable, maintainable, and useful in day-to-day work.
+              My approach is direct: identify the bottleneck, design the flow, build what matters, and
+              deliver a system that is understandable, maintainable, and running reliably in your operations.
             </p>
           </div>
           <div class="about-points">
             <h3>What working together looks like</h3>
             <ul class="bullet-list">
-              <li>Start with a concrete business problem and the tools already in play</li>
-              <li>Design around outcomes like response time, conversion, and operational consistency</li>
-              <li>Ship lean architecture that can evolve as volume and complexity increase</li>
-              <li>Favor clarity, observability, and handoff readiness over novelty</li>
+              <li>Start from a concrete operational problem, not a technology wishlist</li>
+              <li>Design for lead routing accuracy, response speed, and workflow consistency</li>
+              <li>Ship lean, observable architecture that holds up as volume increases</li>
+              <li>Prioritize handoff clarity and long-term maintainability over novelty</li>
             </ul>
           </div>
         </div>
@@ -994,23 +1103,23 @@
       <section id="contact" class="section fade-up" aria-labelledby="contact-title">
         <div class="section-head">
           <div class="section-kicker">Contact</div>
-          <h2 id="contact-title">If you have a process bottleneck, I can help turn it into a system</h2>
+          <h2 id="contact-title">If you have a bottleneck, a broken workflow, or a missed opportunity — let's fix it</h2>
         </div>
         <div class="contact-card">
           <div class="contact-copy">
             <p>
-              The best starting point is a short call focused on your current workflow, the tools involved,
-              and where opportunities or time are getting lost.
+              Start with a 15-minute automation audit. We'll look at your current workflow, where
+              manual work is piling up, and what it would take to automate or integrate it.
             </p>
             <div class="cta-row">
-              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a 15-minute call</a>
+              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a 15-minute automation audit</a>
               <a class="button-secondary" href="mailto:mnbentley@outlook.com">Email me directly</a>
             </div>
           </div>
           <ul class="contact-list" aria-label="Engagement details">
-            <li><strong>Good fit:</strong> service businesses that need better lead handling, smoother operations, or integrated customer workflows.</li>
-            <li><strong>Typical work:</strong> AI automations, API integrations, n8n systems, AI voice and chat agents, and FastAPI backend services.</li>
-            <li><strong>Delivery style:</strong> focused implementation, clear communication, and systems built to keep working after handoff.</li>
+            <li><strong>Good fit:</strong> service businesses losing leads to slow follow-up, running disconnected tools, or doing work that should be automated.</li>
+            <li><strong>Typical work:</strong> AI lead intake, workflow automation, API integrations, AI voice agents, n8n systems, and FastAPI backend services.</li>
+            <li><strong>Also on GitHub:</strong> <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer" class="contact-accent-link">github.com/bentley-michael</a> — see what I'm building.</li>
           </ul>
         </div>
       </section>
@@ -1019,7 +1128,7 @@
 
   <footer>
     <div class="shell">
-      <div>© <span id="year"></span> Nathan Bentley. AI automation, integrations, and backend systems for small businesses.</div>
+      <div>© <span id="year"></span> Michael Bentley. AI automation systems, integrations, and backend infrastructure for small businesses.</div>
     </div>
   </footer>
 
