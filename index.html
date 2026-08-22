@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Bentley | AI Automation & Integration Systems</title>
+  <title>Michael Bentley | API Integration & Workflow Automation</title>
   <meta
     name="description"
-    content="Michael Bentley builds practical AI automation systems, API integrations, n8n workflows, AI voice agents, and FastAPI backends for small businesses."
+    content="Michael Bentley builds reliable API integrations, webhook services, OAuth2 sync engines, n8n workflows, and FastAPI backends."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -693,6 +693,291 @@
       color: var(--accent);
     }
 
+    /* Recruiter edition: editorial engineering system */
+    :root {
+      --bg: #f3f0e8;
+      --bg-soft: #e9e5dc;
+      --panel: transparent;
+      --panel-strong: #f3f0e8;
+      --panel-alt: #ebe7de;
+      --line: #bbb7ad;
+      --line-strong: #171717;
+      --text: #171717;
+      --muted: #625f58;
+      --accent: #1648ff;
+      --accent-2: #1648ff;
+      --accent-3: #ff5c35;
+      --shadow: none;
+      --radius: 0;
+      --radius-sm: 0;
+      --max: 1320px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body::before { display: none; }
+
+    .site-header {
+      background: rgba(243, 240, 232, 0.94);
+      border-bottom: 1px solid var(--line-strong);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner { padding: 14px 0; }
+
+    .brand {
+      gap: 10px;
+      font-family: "Sora", sans-serif;
+      font-size: .9rem;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 9px;
+      height: 9px;
+      border-radius: 0;
+      background: var(--accent);
+      box-shadow: none;
+    }
+
+    .nav {
+      gap: 0;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 0;
+      border-left: 1px solid transparent;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    main { padding-top: 0; }
+
+    .hero {
+      padding: 56px 0 0;
+      gap: 20px;
+    }
+
+    .eyebrow,
+    .service-tag,
+    .stack-tag,
+    .status-pill {
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      color: var(--accent);
+      padding: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before { content: "01 / "; color: var(--muted); }
+
+    .hero-grid {
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .card,
+    .stack-diagram,
+    .contact-card,
+    .about-copy,
+    .about-points {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .hero-copy::after,
+    .hero-panel::after,
+    .card::after,
+    .stack-diagram::after,
+    .contact-card::after { display: none; }
+
+    .hero-copy { padding: 54px 48px 54px 0; }
+
+    h1 {
+      margin: 0;
+      max-width: 11ch;
+      font-size: clamp(3.2rem, 7.6vw, 7.4rem);
+      line-height: .92;
+      letter-spacing: -.075em;
+    }
+
+    .hero-copy p {
+      max-width: 58ch;
+      color: var(--text);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .hero-subtext { color: var(--muted) !important; }
+
+    .hero-panel {
+      padding: 54px 0 54px 40px;
+      border-left: 1px solid var(--line-strong);
+      align-content: start;
+    }
+
+    .panel-top { align-items: flex-start; }
+    .panel-top h2 { margin-top: 14px; font-size: 2rem; }
+    .status-pill { color: var(--muted); white-space: normal; text-align: right; }
+
+    .panel-list { gap: 0; border-top: 1px solid var(--line); }
+    .panel-list li {
+      padding: 18px 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+    .panel-list span { color: var(--muted); }
+
+    .metrics { gap: 0; border: 1px solid var(--line-strong); }
+    .metric {
+      padding: 14px;
+      border: 0;
+      border-right: 1px solid var(--line-strong);
+      border-radius: 0;
+      background: transparent;
+    }
+    .metric:last-child { border-right: 0; }
+    .metric strong { color: var(--accent); }
+    .metric span { color: var(--muted); }
+
+    .button,
+    .button-secondary {
+      min-height: 44px;
+      border-radius: 0;
+      padding: 0 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .button { color: #fff; background: var(--accent); border: 1px solid var(--accent); }
+    .button-secondary { color: var(--text); background: transparent; border: 1px solid var(--line-strong); }
+    .button:hover, .button:focus-visible { background: var(--text); border-color: var(--text); }
+    .button-secondary:hover, .button-secondary:focus-visible { color: #fff; background: var(--text); }
+
+    .signal-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .signal {
+      min-height: 150px;
+      padding: 18px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+    .signal strong { font-family: "Sora", sans-serif; }
+    .signal span { color: var(--muted); }
+
+    .section { padding-top: 96px; }
+    .section-head {
+      grid-template-columns: minmax(130px, .3fr) 1fr;
+      align-items: start;
+      gap: 30px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .section-head h2 { max-width: 22ch; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .98; letter-spacing: -.06em; }
+    .section-head p { grid-column: 2; max-width: 64ch; color: var(--muted); }
+    .section-kicker, .panel-label {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .72rem;
+      letter-spacing: .08em;
+    }
+
+    .card-grid, .use-grid { gap: 0; border-left: 1px solid var(--line); }
+    .card {
+      padding: 26px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .card h3 { margin-top: 20px; font-size: 1.35rem; line-height: 1.15; }
+    .card p { color: var(--muted); }
+    .bullet-list li { color: var(--text); }
+    .bullet-list li::before { width: 6px; height: 6px; border-radius: 0; background: var(--accent); box-shadow: none; }
+
+    #projects .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    #projects .card { padding-top: 34px; }
+    #projects .card h3 { font-size: 1.65rem; }
+
+    /* Client-sales sections are intentionally excluded from the recruiter edition. */
+    #services, #use-cases { display: none; }
+
+    .stack-grid, .about-grid, .contact-card { gap: 0; border: 1px solid var(--line-strong); }
+    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 30px; }
+    .stack-diagram + .card, .about-points, .contact-list { border-left: 1px solid var(--line-strong); }
+
+    .flow { gap: 0; }
+    .flow-step { border-bottom: 1px solid var(--line); }
+    .flow-index { border-radius: 0; background: var(--accent); color: #fff; }
+    .flow-step span, .about-copy p, .contact-copy p { color: var(--muted); }
+
+    .stack-tags { gap: 8px; }
+    .stack-tag { padding: 8px 10px; border: 1px solid var(--line); color: var(--text); }
+
+    .contact-card { margin-top: 0; }
+    .contact-list { background: var(--accent); color: #fff; }
+    .contact-list li { border: 0; border-bottom: 1px solid rgba(255,255,255,.35); border-radius: 0; background: transparent; }
+    .contact-accent-link { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+    footer { margin-top: 80px; border-top: 1px solid var(--line-strong); color: var(--muted); }
+
+    @media (max-width: 979px) {
+      .hero-copy { padding-right: 24px; }
+      .hero-panel { padding-left: 24px; }
+      #projects .card-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 719px) {
+      .site-header { position: relative; }
+      .header-inner { align-items: flex-start; }
+      .nav { display: none; }
+      .hero { padding-top: 34px; }
+      .hero-copy { padding: 34px 0; }
+      .hero-panel { padding: 30px 0; border-left: 0; border-top: 1px solid var(--line-strong); }
+      h1 { font-size: clamp(3rem, 15vw, 5rem); }
+      .section { padding-top: 64px; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; }
+      .section-head p { grid-column: 1; }
+      .card-grid, .use-grid { grid-template-columns: 1fr; }
+      .stack-grid, .about-grid, .contact-card { grid-template-columns: 1fr; }
+      .stack-diagram + .card, .about-points, .contact-list { border-left: 0; border-top: 1px solid var(--line-strong); }
+      .signal-row { grid-template-columns: 1fr; }
+      .signal { min-height: 0; }
+    }
+
   </style>
 </head>
 <body>
@@ -703,9 +988,8 @@
         <span>Michael Bentley</span>
       </a>
       <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
         <a href="#featured">Featured Build</a>
-        <a href="#services">Services</a>
-        <a href="#use-cases">Use Cases</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -717,21 +1001,21 @@
   <main id="top">
     <div class="shell">
       <section class="hero fade-up" aria-labelledby="hero-title">
-        <div class="eyebrow">AI systems builder &amp; automation consultant</div>
+        <div class="eyebrow">API integration &amp; workflow automation developer</div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title">I Build the Automation Systems That Keep Small Businesses Running</h1>
+            <h1 id="hero-title">Backend &amp; API Engineer for Fintech Integrations</h1>
             <p>
-              Practical AI workflows, API integrations, and backend systems that reduce manual work,
-              close response gaps, and connect the tools you already depend on.
+              I design and ship API integrations, webhook services, OAuth2 data-sync workflows, and automation
+              backends with validation, idempotency, retries, and clear operational failure paths.
             </p>
             <p class="hero-subtext">
-              From lead intake pipelines and AI voice agents to n8n orchestration and FastAPI backends —
-              I design, build, and ship operational systems, not slide decks.
+              My portfolio shows working FastAPI and n8n systems, documented architecture, authentication,
+              error handling, test paths, and practical handoff instructions.
             </p>
             <div class="cta-row">
-              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a 15-minute automation audit</a>
-              <a class="button-secondary" href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">View on GitHub</a>
+              <a class="button" href="#projects">View projects</a>
+              <a class="button-secondary" href="#contact">Contact me</a>
             </div>
             <div class="signal-row" aria-label="Core focus areas">
               <div class="signal">
@@ -756,8 +1040,8 @@
           <aside class="hero-panel" aria-label="Typical engagements">
             <div class="panel-top">
               <div>
-                <div class="panel-label">What I build</div>
-                <h2>Operational systems that remove bottlenecks</h2>
+                <div class="panel-label">Engineering profile</div>
+                <h2>Integration work built for the failure path</h2>
               </div>
               <div class="status-pill">Static site. Fast load.</div>
             </div>
@@ -793,10 +1077,59 @@
         </div>
       </section>
 
+      <section id="projects" class="section fade-up" aria-labelledby="projects-title">
+        <div class="section-head">
+          <div class="section-kicker">Selected Projects</div>
+          <h2 id="projects-title">Integration work with the failure paths documented</h2>
+          <p>Recruiter-ready builds showing architecture, authentication, validation, error handling, testing, and operational decisions.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="service-tag">FastAPI · Webhooks</div>
+            <h3>Fintech Integration Lab</h3>
+            <p>A webhook ingestion service designed to process retried and duplicated financial events safely.</p>
+            <ul class="bullet-list">
+              <li><strong>Problem:</strong> duplicate deliveries and untrusted payloads can corrupt downstream state</li>
+              <li><strong>Architecture:</strong> FastAPI endpoint, signature verification, persistence, and processing boundary</li>
+              <li><strong>Auth:</strong> HMAC signature validation before business logic</li>
+              <li><strong>Error handling:</strong> idempotency keys, validation failures, and replay-safe responses</li>
+              <li><strong>Proof:</strong> working API, tests, Docker setup, and documented demo</li>
+            </ul>
+            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/fintech-integration-lab" target="_blank" rel="noreferrer">View repository</a></div>
+          </article>
+          <article class="card">
+            <div class="service-tag">FastAPI · OAuth2</div>
+            <h3>Fintech OAuth Sync Lab</h3>
+            <p>An OAuth2 integration and sync engine built around token lifecycle, pagination, and recoverable failures.</p>
+            <ul class="bullet-list">
+              <li><strong>Problem:</strong> external account data must stay synchronized despite expired tokens and partial runs</li>
+              <li><strong>Architecture:</strong> OAuth callback, encrypted tokens, provider client, and incremental sync service</li>
+              <li><strong>Auth:</strong> authorization-code flow with refresh-token handling</li>
+              <li><strong>Error handling:</strong> refresh recovery, rate-limit retries, pagination, and checkpoints</li>
+              <li><strong>Proof:</strong> working API, tests, setup guide, and architecture notes</li>
+            </ul>
+            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/fintech-oauth-sync-lab" target="_blank" rel="noreferrer">View repository</a></div>
+          </article>
+          <article class="card">
+            <div class="service-tag">Vapi · n8n</div>
+            <h3>Contractor Intake AI</h3>
+            <p>A voice-intake pipeline that converts contractor calls into structured leads and operational alerts.</p>
+            <ul class="bullet-list">
+              <li><strong>Problem:</strong> missed calls and inconsistent intake cause contractors to lose leads</li>
+              <li><strong>Architecture:</strong> Vapi → webhook → n8n → Google Sheets and Discord</li>
+              <li><strong>Config:</strong> environment-based client and alert configuration</li>
+              <li><strong>Error handling:</strong> payload normalization, junk filtering, and separate routes</li>
+              <li><strong>Proof:</strong> importable workflow, configuration guide, and demo instructions</li>
+            </ul>
+            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">View repository</a></div>
+          </article>
+        </div>
+      </section>
+
       <section id="featured" class="section fade-up" aria-labelledby="featured-title">
         <div class="section-head">
           <div class="section-kicker">Featured Build</div>
-          <h2 id="featured-title">Featured System: AnsweredCallAI</h2>
+          <h2 id="featured-title">Featured System: AnsweredCall</h2>
           <p>
             A production AI automation system built to handle missed-call lead intake, urgency routing,
             and multi-channel follow-up — without a human in the loop.
@@ -1080,7 +1413,7 @@
             </p>
             <p>
               I work at the implementation layer: designing for workflow reliability, operational visibility,
-              and lead routing accuracy from the start. AnsweredCallAI is one example of the kind of
+              and lead routing accuracy from the start. AnsweredCall is one example of the kind of
               AI-assisted operations systems I design and deploy.
             </p>
             <p>
@@ -1103,17 +1436,17 @@
       <section id="contact" class="section fade-up" aria-labelledby="contact-title">
         <div class="section-head">
           <div class="section-kicker">Contact</div>
-          <h2 id="contact-title">If you have a bottleneck, a broken workflow, or a missed opportunity — let's fix it</h2>
+          <h2 id="contact-title">Hiring for integration work? Let’s talk.</h2>
         </div>
         <div class="contact-card">
           <div class="contact-copy">
             <p>
-              Start with a 15-minute automation audit. We'll look at your current workflow, where
-              manual work is piling up, and what it would take to automate or integrate it.
+              I’m open to API integration, workflow automation, and backend engineering roles where
+              reliable delivery, troubleshooting, and clear documentation matter.
             </p>
             <div class="cta-row">
-              <a class="button" href="https://calendly.com/mnbentley" target="_blank" rel="noreferrer">Book a 15-minute automation audit</a>
-              <a class="button-secondary" href="mailto:mnbentley@outlook.com">Email me directly</a>
+              <a class="button" href="mailto:mnbentley@gmail.com">Discuss a role</a>
+              <a class="button-secondary" href="mailto:mnbentley@gmail.com">Email me directly</a>
             </div>
           </div>
           <ul class="contact-list" aria-label="Engagement details">
