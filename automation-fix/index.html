@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One-Day Business Automation Fix | Michael Bentley</title>
+  <meta name="description" content="Fix one repetitive business process in one day. Practical AI and workflow automation for leads, intake, follow-up, alerts, data entry, and operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#f3f0e8; --panel:#ebe7de; --text:#171717; --muted:#625f58;
+      --line:#bbb7ad; --accent:#1648ff; --max:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}.shell{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(243,240,232,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--text)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:18px}.brand{font-family:"Sora",sans-serif;font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:-.02em}.navlinks{display:flex;gap:6px;flex-wrap:wrap}.navlinks a,.mini{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:8px 10px}.navlinks a:hover{background:var(--accent);color:#fff}
+    main{padding-bottom:72px}.hero{padding:64px 0 0}.kicker{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;border-top:1px solid var(--text);border-bottom:1px solid var(--text)}
+    .hero-copy{padding:56px 48px 56px 0}.hero-side{padding:56px 0 56px 40px;border-left:1px solid var(--text)}h1,h2,h3{font-family:"Sora",sans-serif;margin:0;letter-spacing:-.05em}h1{font-size:clamp(3.2rem,7vw,6.5rem);line-height:.94;max-width:10ch}.lead{font-size:1.08rem;line-height:1.7;max-width:62ch;margin:24px 0 0}.muted{color:var(--muted)}
+    .price{font-family:"Sora",sans-serif;font-size:3.2rem;letter-spacing:-.06em;color:var(--accent);margin:14px 0 6px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;background:var(--accent);color:white;border:1px solid var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.button:hover{background:var(--text);border-color:var(--text)}.button.secondary{background:transparent;color:var(--text);border-color:var(--text)}.button.secondary:hover{background:var(--text);color:#fff}.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    section{padding-top:88px}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;padding-bottom:22px;border-bottom:1px solid var(--text)}.section-head h2{font-size:clamp(2.4rem,5vw,4.5rem);line-height:.98;max-width:18ch}.section-head p{grid-column:2;max-width:66ch;line-height:1.7;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}.card{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.card h3{font-size:1.35rem;line-height:1.15;margin-bottom:12px}.card p{margin:0;color:var(--muted);line-height:1.65}.num{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);font-size:.78rem;font-weight:800;margin-bottom:22px}
+    ul.clean{list-style:none;padding:0;margin:0}.clean li{padding:15px 0;border-bottom:1px solid var(--line);line-height:1.55}.clean li:last-child{border-bottom:0}.check{color:var(--accent);font-weight:800;margin-right:8px}
+    .split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--text)}.split>div{padding:30px}.split>div+div{border-left:1px solid var(--text)}
+    .proof{display:grid;gap:16px}.proof-item{padding:18px 0;border-bottom:1px solid var(--line)}.proof-item:last-child{border-bottom:0}.proof-item strong{display:block;font-family:"Sora",sans-serif;margin-bottom:7px}.proof-item span{color:var(--muted);line-height:1.6}
+    .form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--text)}.form-copy,.form-panel{padding:32px}.form-panel{border-left:1px solid var(--text);background:var(--panel)}form{display:grid;gap:14px}label{font-size:.82rem;font-weight:800}input,textarea,select{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--text);padding:13px 14px;border-radius:0}textarea{min-height:130px;resize:vertical}.field{display:grid;gap:7px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hint{font-size:.82rem;color:var(--muted);line-height:1.5}.email-backup{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;line-height:1.6}.email-backup a{text-decoration:underline;text-underline-offset:3px}
+    footer{margin-top:72px;border-top:1px solid var(--text);padding:24px 0;color:var(--muted);font-size:.86rem}
+    @media(max-width:850px){.hero-grid,.split,.form-wrap{grid-template-columns:1fr}.hero-side,.split>div+div,.form-panel{border-left:0;border-top:1px solid var(--text)}.hero-copy{padding-right:0}.hero-side{padding-left:0}.section-head{grid-template-columns:1fr}.section-head p{grid-column:1}.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){header{position:relative}.navlinks{display:none}.hero{padding-top:38px}.hero-copy,.hero-side{padding-top:36px;padding-bottom:36px}.grid,.two{grid-template-columns:1fr}.form-copy,.form-panel,.split>div,.card{padding:22px}h1{font-size:clamp(3rem,15vw,4.8rem)}}
+  </style>
+</head>
+<body>
+<header><div class="shell nav"><a class="brand" href="/">Michael Bentley</a><nav class="navlinks"><a href="#examples">Examples</a><a href="#process">Process</a><a href="#proof">Proof</a><a href="#start">Start</a><a href="/">Portfolio</a></nav></div></header>
+<main>
+  <div class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="kicker">One workflow. One day. One clear result.</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">Stop doing repetitive work manually.</h1>
+          <p class="lead">I fix one annoying business process in one day using practical AI, APIs, and workflow automation — so leads, follow-up, intake, alerts, and routine admin stop depending on someone remembering to do them.</p>
+          <div class="cta"><a class="button" href="#start">Tell me what you want fixed</a><a class="button secondary" href="#examples">See examples</a></div>
+        </div>
+        <aside class="hero-side">
+          <div class="mini">Introductory fixed price</div>
+          <div class="price">$300</div>
+          <p class="muted">One scoped workflow, up to three connected tools, testing, handoff, and 7 days of bug-fix support.</p>
+          <ul class="clean" style="margin-top:22px">
+            <li><span class="check">✓</span>20–30 minute discovery</li>
+            <li><span class="check">✓</span>One automation built and tested</li>
+            <li><span class="check">✓</span>Simple handoff instructions</li>
+            <li><span class="check">✓</span>If the agreed workflow cannot be usefully implemented, you do not pay</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="examples" aria-labelledby="examples-title">
+      <div class="section-head"><div class="kicker">What I fix</div><h2 id="examples-title">Small operational problems that waste time or lose leads.</h2><p>The best projects are boring, repetitive, and measurable. If someone is copying, pasting, checking, routing, reminding, or retyping the same information every day, there is usually a better way.</p></div>
+      <div class="grid">
+        <article class="card"><div class="num">01 / Lead rescue</div><h3>New leads stop falling through the cracks</h3><p>Capture inquiries, organize the details, notify the right person, and trigger follow-up automatically.</p></article>
+        <article class="card"><div class="num">02 / Intake</div><h3>Forms become usable business data</h3><p>Route form or call information into Sheets, a CRM, email, or another system without manual re-entry.</p></article>
+        <article class="card"><div class="num">03 / Follow-up</div><h3>Customers get the next message on time</h3><p>Automate reminders, review requests, status updates, or internal follow-up steps.</p></article>
+        <article class="card"><div class="num">04 / Alerts</div><h3>The right person knows when something matters</h3><p>Turn important events into structured email, chat, SMS, or dashboard alerts instead of inbox hunting.</p></article>
+        <article class="card"><div class="num">05 / Admin</div><h3>Repeated office work gets removed</h3><p>Connect tools, move data, create records, generate summaries, or eliminate repetitive copy/paste work.</p></article>
+        <article class="card"><div class="num">06 / AI assist</div><h3>Unstructured information becomes actionable</h3><p>Classify, summarize, extract, route, or draft from incoming text when AI genuinely reduces human effort.</p></article>
+      </div>
+    </section>
+
+    <section id="process" aria-labelledby="process-title">
+      <div class="section-head"><div class="kicker">How it works</div><h2 id="process-title">Fast enough to be useful. Small enough to stay controlled.</h2><p>This is deliberately not a giant software project. We pick one clear bottleneck, define the before-and-after, build the smallest reliable automation, and test the failure path.</p></div>
+      <div class="split">
+        <div><ul class="clean"><li><strong>1. Diagnose.</strong><br><span class="muted">A short call identifies the manual step, tools involved, and desired outcome.</span></li><li><strong>2. Scope.</strong><br><span class="muted">We agree on one workflow and what “done” means before work starts.</span></li><li><strong>3. Build.</strong><br><span class="muted">I connect the tools, add the logic, and handle obvious failure cases.</span></li><li><strong>4. Test + hand off.</strong><br><span class="muted">You see the workflow run, receive simple instructions, and get 7 days of bug-fix support.</span></li></ul></div>
+        <div><div class="kicker">Good fit</div><div class="proof"><div class="proof-item"><strong>One repetitive workflow</strong><span>Usually involving forms, email, Sheets, CRMs, webhooks, APIs, notifications, or AI processing.</span></div><div class="proof-item"><strong>Up to three connected tools</strong><span>Enough to solve a real problem without turning the engagement into a platform migration.</span></div><div class="proof-item"><strong>Not included</strong><span>Full websites, custom SaaS platforms, enterprise migrations, unlimited revisions, or open-ended ongoing support.</span></div></div></div>
+      </div>
+    </section>
+
+    <section id="proof" aria-labelledby="proof-title">
+      <div class="section-head"><div class="kicker">Proof of work</div><h2 id="proof-title">Built around real workflows, not AI demos.</h2><p>My work focuses on practical integrations and operational automation: lead intake, API connections, webhook processing, OAuth2 sync, structured alerts, and reliable workflow orchestration.</p></div>
+      <div class="grid">
+        <article class="card"><div class="num">AnsweredCall</div><h3>Missed-call lead intake</h3><p>AI-assisted intake, structured lead capture, urgency routing, and operational alerts using voice, n8n, webhooks, and business tools.</p></article>
+        <article class="card"><div class="num">Integration Lab</div><h3>Webhook processing</h3><p>FastAPI webhook ingestion with signature validation, idempotency, persistence, testing, and replay-safe handling.</p></article>
+        <article class="card"><div class="num">OAuth Sync Lab</div><h3>External account synchronization</h3><p>OAuth2 authorization, token refresh, pagination, incremental sync, and recoverable failure handling.</p></article>
+      </div>
+    </section>
+
+    <section id="start" aria-labelledby="start-title">
+      <div class="section-head"><div class="kicker">Start here</div><h2 id="start-title">Tell me the thing your business keeps doing manually.</h2><p>You do not need to know what automation tool you need. Describe the repetitive task, what happens now, and what you wish happened instead.</p></div>
+      <div class="form-wrap">
+        <div class="form-copy">
+          <div class="kicker">One-Day Automation Fix</div>
+          <h3 style="font-size:2rem;line-height:1.05">I’ll tell you whether it fits the $300 scope.</h3>
+          <p class="lead muted" style="font-size:1rem">If it does, we agree on the workflow and outcome before any work starts. If it is larger, I will tell you instead of forcing it into the wrong package.</p>
+          <div class="email-backup">Prefer email? <a href="mailto:mnbentley@outlook.com?subject=One-Day%20Business%20Automation%20Fix">Email Michael directly</a>.</div>
+        </div>
+        <div class="form-panel">
+          <form action="https://formsubmit.co/mnbentley@outlook.com" method="POST">
+            <input type="hidden" name="_subject" value="New One-Day Automation Fix lead" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://bentley-michael.github.io/automation-fix/thanks.html" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="two"><div class="field"><label for="name">Your name</label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="business">Business / organization</label><input id="business" name="business" autocomplete="organization" /></div></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required autocomplete="email" /></div>
+            <div class="field"><label for="problem">What repetitive task do you want fixed?</label><textarea id="problem" name="problem" required placeholder="Example: Every new website lead gets copied into a spreadsheet, then someone emails the sales rep and remembers to follow up two days later."></textarea></div>
+            <div class="field"><label for="tools">What tools are involved?</label><input id="tools" name="tools" placeholder="Example: Gmail, Google Sheets, HubSpot, website form, QuickBooks..." /></div>
+            <div class="two"><div class="field"><label for="cost">What is it costing you?</label><input id="cost" name="cost" placeholder="Time, missed leads, errors..." /></div><div class="field"><label for="timing">How soon?</label><select id="timing" name="timing"><option>As soon as possible</option><option>This week</option><option>This month</option><option>Just exploring</option></select></div></div>
+            <button class="button" type="submit">Send the workflow</button>
+            <div class="hint">No payment is collected on this form. I review the workflow first and confirm whether it fits the fixed-price scope.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer><div class="shell">Michael Bentley · API integration &amp; workflow automation · Murfreesboro, Tennessee</div></footer>
+</body>
+</html>
