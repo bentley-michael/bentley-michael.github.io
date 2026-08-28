@@ -1,0 +1,33 @@
+name: Update site location
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-location.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-location:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace Murfreesboro with Nashville
+        run: |
+          sed -i 's/Murfreesboro, TN/Nashville, TN/g' index.html automation-fix/index.html
+          sed -i 's/Murfreesboro, Tennessee/Nashville, Tennessee/g' index.html automation-fix/index.html
+
+      - name: Commit location update
+        run: |
+          if git diff --quiet; then
+            echo "No location changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html automation-fix/index.html
+          git commit -m "Change public location to Nashville"
+          git push
