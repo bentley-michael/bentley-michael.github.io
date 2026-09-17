@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Bentley | API Integration & Workflow Automation</title>
+  <title>Michael Bentley | Automation &amp; API Integration Specialist</title>
   <meta
     name="description"
-    content="Michael Bentley builds reliable API integrations, webhook services, OAuth2 sync engines, n8n workflows, and FastAPI backends."
+    content="Michael Bentley builds practical n8n workflows, webhook services, and FastAPI integrations for small businesses and technical teams."
   />
+  <link rel="canonical" href="https://bentley-michael.github.io/" />
+  <meta property="og:title" content="Michael Bentley | Automation &amp; API Integration Specialist" />
+  <meta property="og:description" content="Practical n8n workflows, webhook services, and FastAPI integrations, with public project proof." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bentley-michael.github.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -600,9 +605,9 @@
     }
 
     .fade-up {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 600ms ease, transform 600ms ease;
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
 
     .fade-up.is-visible {
@@ -693,20 +698,20 @@
       color: var(--accent);
     }
 
-    /* Recruiter edition: editorial engineering system */
+    /* Editorial portfolio theme */
     :root {
-      --bg: #f3f0e8;
-      --bg-soft: #e9e5dc;
+      --bg: #f5f2ea;
+      --bg-soft: #ebe7dd;
       --panel: transparent;
       --panel-strong: #f3f0e8;
       --panel-alt: #ebe7de;
-      --line: #bbb7ad;
-      --line-strong: #171717;
-      --text: #171717;
-      --muted: #625f58;
-      --accent: #1648ff;
-      --accent-2: #1648ff;
-      --accent-3: #ff5c35;
+      --line: #c3bdb1;
+      --line-strong: #1b1b19;
+      --text: #1b1b19;
+      --muted: #625f57;
+      --accent: #1d4f7a;
+      --accent-2: #1d4f7a;
+      --accent-3: #a5412d;
       --shadow: none;
       --radius: 0;
       --radius-sm: 0;
@@ -721,7 +726,7 @@
     body::before { display: none; }
 
     .site-header {
-      background: rgba(243, 240, 232, 0.94);
+      background: rgba(245, 242, 234, 0.96);
       border-bottom: 1px solid var(--line-strong);
       backdrop-filter: blur(10px);
     }
@@ -731,9 +736,8 @@
     .brand {
       gap: 10px;
       font-family: "Sora", sans-serif;
-      font-size: .9rem;
+      font-size: .94rem;
       letter-spacing: -.02em;
-      text-transform: uppercase;
     }
 
     .brand-mark {
@@ -768,7 +772,7 @@
     main { padding-top: 0; }
 
     .hero {
-      padding: 56px 0 0;
+      padding: 48px 0 0;
       gap: 20px;
     }
 
@@ -820,10 +824,10 @@
 
     h1 {
       margin: 0;
-      max-width: 11ch;
-      font-size: clamp(3.2rem, 7.6vw, 7.4rem);
-      line-height: .92;
-      letter-spacing: -.075em;
+      max-width: 12ch;
+      font-size: clamp(3rem, 6.2vw, 6.2rem);
+      line-height: .96;
+      letter-spacing: -.06em;
     }
 
     .hero-copy p {
@@ -855,18 +859,6 @@
     }
     .panel-list span { color: var(--muted); }
 
-    .metrics { gap: 0; border: 1px solid var(--line-strong); }
-    .metric {
-      padding: 14px;
-      border: 0;
-      border-right: 1px solid var(--line-strong);
-      border-radius: 0;
-      background: transparent;
-    }
-    .metric:last-child { border-right: 0; }
-    .metric strong { color: var(--accent); }
-    .metric span { color: var(--muted); }
-
     .button,
     .button-secondary {
       min-height: 44px;
@@ -884,23 +876,21 @@
 
     .signal-row {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
+      gap: 24px;
       border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
     }
     .signal {
-      min-height: 150px;
-      padding: 18px;
+      min-height: 0;
+      padding: 20px 0 0;
       border: 0;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
       border-radius: 0;
       background: transparent;
     }
+    .signal + .signal { padding-left: 24px; border-left: 1px solid var(--line); }
     .signal strong { font-family: "Sora", sans-serif; }
     .signal span { color: var(--muted); }
 
-    .section { padding-top: 96px; }
+    .section { padding-top: 80px; }
     .section-head {
       grid-template-columns: minmax(130px, .3fr) 1fr;
       align-items: start;
@@ -908,7 +898,7 @@
       padding-bottom: 24px;
       border-bottom: 1px solid var(--line-strong);
     }
-    .section-head h2 { max-width: 22ch; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .98; letter-spacing: -.06em; }
+    .section-head h2 { max-width: 24ch; font-size: clamp(2.25rem, 4.2vw, 4.2rem); line-height: 1.02; letter-spacing: -.05em; }
     .section-head p { grid-column: 2; max-width: 64ch; color: var(--muted); }
     .section-kicker, .panel-label {
       color: var(--accent);
@@ -975,7 +965,16 @@
       .stack-grid, .about-grid, .contact-card { grid-template-columns: 1fr; }
       .stack-diagram + .card, .about-points, .contact-list { border-left: 0; border-top: 1px solid var(--line-strong); }
       .signal-row { grid-template-columns: 1fr; }
-      .signal { min-height: 0; }
+      .signal + .signal { padding-left: 0; border-left: 0; }
+    }
+
+    .site-header a:focus-visible,
+    .button:focus-visible,
+    .button-secondary:focus-visible,
+    .contact-accent-link:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--accent-3);
+      outline-offset: 3px;
     }
 
   </style>
@@ -989,7 +988,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#projects">Projects</a>
-        <a href="#featured">Featured Build</a>
+        <a href="/automation-fix/">Work with me</a>
         <a href="#stack">Stack</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -1001,38 +1000,30 @@
   <main id="top">
     <div class="shell">
       <section class="hero fade-up" aria-labelledby="hero-title">
-        <div class="eyebrow">API integration &amp; workflow automation developer</div>
+        <div class="eyebrow">Automation &amp; API integration specialist</div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title">Backend &amp; API Engineer for Automation &amp; Integrations</h1>
+            <h1 id="hero-title">Automation &amp; API Integration Specialist</h1>
             <p>
-              I design and ship API integrations, webhook services, OAuth2 data-sync workflows, and automation
-              backends with validation, idempotency, retries, and clear operational failure paths.
+              I build practical n8n workflows, webhook services, and FastAPI integrations that move data
+              between tools, route leads, and make failures easier to see and recover from.
             </p>
             <p class="hero-subtext">
-              My portfolio shows working FastAPI and n8n systems, documented architecture, authentication,
-              error handling, test paths, and practical handoff instructions.
+              Available for focused freelance automations and technical roles involving APIs, workflow
+              implementation, troubleshooting, and documentation.
             </p>
             <div class="cta-row">
-              <a class="button" href="#projects">View projects</a>
-              <a class="button-secondary" href="#contact">Contact me</a>
+              <a class="button" href="/automation-fix/">Discuss an automation</a>
+              <a class="button-secondary" href="#projects">View projects</a>
             </div>
             <div class="signal-row" aria-label="Core focus areas">
               <div class="signal">
-                <strong>Automation that ships</strong>
-                <span>n8n workflows, webhook routing, retries, and operational safeguards built for reliability.</span>
+                <strong>For small businesses</strong>
+                <span>Focused automations for lead intake, alerts, data routing, and repetitive admin work.</span>
               </div>
               <div class="signal">
-                <strong>Systems that connect</strong>
-                <span>FastAPI backends, third-party APIs, CRMs, inboxes, calendars, and databases.</span>
-              </div>
-              <div class="signal">
-                <strong>AI agents with a real job</strong>
-                <span>Voice and chat agents built around lead handling, intake, and qualification — not demos.</span>
-              </div>
-              <div class="signal">
-                <strong>Built for small teams</strong>
-                <span>Lean, understandable architecture with clear handoff and no unnecessary platform lock-in.</span>
+                <strong>For technical teams</strong>
+                <span>Documented API and integration work with tests, error handling, and clear handoff.</span>
               </div>
             </div>
           </div>
@@ -1040,8 +1031,8 @@
           <aside class="hero-panel" aria-label="Typical engagements">
             <div class="panel-top">
               <div>
-                <div class="panel-label">Engineering profile</div>
-                <h2>Integration work built for the failure path</h2>
+                <div class="panel-label">Technical profile</div>
+                <h2>Integration work that accounts for retries and failures</h2>
               </div>
               <div class="status-pill">Nashville, TN<br />Open to remote</div>
             </div>
@@ -1059,20 +1050,6 @@
                 <span>n8n and FastAPI systems with validation, routing, retries, logging, and visible failure paths.</span>
               </li>
             </ul>
-            <div class="metrics" aria-label="Service summary">
-              <div class="metric">
-                <strong>Webhooks</strong>
-                <span>Security, validation, and idempotency</span>
-              </div>
-              <div class="metric">
-                <strong>OAuth2</strong>
-                <span>Token lifecycle and resilient sync</span>
-              </div>
-              <div class="metric">
-                <strong>n8n</strong>
-                <span>Automation and system orchestration</span>
-              </div>
-            </div>
           </aside>
         </div>
       </section>
@@ -1080,8 +1057,8 @@
       <section id="projects" class="section fade-up" aria-labelledby="projects-title">
         <div class="section-head">
           <div class="section-kicker">Selected Projects</div>
-          <h2 id="projects-title">Integration work with the failure paths documented</h2>
-          <p>Recruiter-ready builds showing architecture, authentication, validation, error handling, testing, and operational decisions.</p>
+          <h2 id="projects-title">Working examples with code and setup notes</h2>
+          <p>Public repositories showing architecture, authentication, validation, error handling, testing, and implementation decisions.</p>
         </div>
         <div class="card-grid">
           <article class="card">
@@ -1118,7 +1095,7 @@
               <li><strong>Problem:</strong> missed calls and inconsistent intake cause contractors to lose leads</li>
               <li><strong>Architecture:</strong> Vapi → webhook → n8n → Google Sheets and Discord</li>
               <li><strong>Config:</strong> environment-based client and alert configuration</li>
-              <li><strong>Error handling:</strong> payload normalization, junk filtering, and separate routes</li>
+              <li><strong>Routing:</strong> payload normalization, junk filtering, and separate lead paths</li>
               <li><strong>Proof:</strong> importable workflow, configuration guide, and demo instructions</li>
             </ul>
             <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">View repository</a></div>
@@ -1131,8 +1108,8 @@
           <div class="section-kicker">Featured Build</div>
           <h2 id="featured-title">Featured System: AnsweredCall</h2>
           <p>
-            A production AI automation system built to handle missed-call lead intake, urgency routing,
-            and multi-channel follow-up — without a human in the loop.
+            A customer-facing automation offer built around voice intake, structured lead capture,
+            and immediate operational alerts for home-service businesses.
           </p>
         </div>
         <div class="stack-grid">
@@ -1142,36 +1119,36 @@
               <div class="flow-step">
                 <div class="flow-index">01</div>
                 <div>
-                  <strong>Missed call triggers the workflow</strong>
-                  <span>Inbound missed calls fire a webhook that immediately initiates the intake pipeline — no delay, no manual step.</span>
+                  <strong>A caller reaches the voice intake</strong>
+                  <span>The voice agent handles the conversation and collects the information needed for follow-up.</span>
                 </div>
               </div>
               <div class="flow-step">
                 <div class="flow-index">02</div>
                 <div>
-                  <strong>AI voice agent handles the callback</strong>
-                  <span>An AI voice agent calls the lead, collects structured information, and determines urgency using business-defined rules.</span>
+                  <strong>The call becomes structured data</strong>
+                  <span>Contact, location, service, urgency, and call-summary fields are normalized into a predictable schema.</span>
                 </div>
               </div>
               <div class="flow-step">
                 <div class="flow-index">03</div>
                 <div>
-                  <strong>Lead data captured and classified</strong>
-                  <span>Contact details, intent, and urgency signals are extracted and stored in a structured format for downstream routing.</span>
+                  <strong>n8n applies routing rules</strong>
+                  <span>The workflow filters junk calls and prepares qualified leads for storage and notification.</span>
                 </div>
               </div>
               <div class="flow-step">
                 <div class="flow-index">04</div>
                 <div>
-                  <strong>SMS &amp; email notifications routed instantly</strong>
-                  <span>High-priority leads trigger immediate alerts; standard leads enter automated follow-up sequences via n8n workflows.</span>
+                  <strong>The lead is recorded and surfaced</strong>
+                  <span>Qualified lead data is written to Google Sheets and sent to Discord as an operational alert.</span>
                 </div>
               </div>
               <div class="flow-step">
                 <div class="flow-index">05</div>
                 <div>
-                  <strong>Full workflow orchestration via n8n + FastAPI</strong>
-                  <span>n8n handles orchestration and integrations; a FastAPI backend processes AI responses, manages state, and exposes internal APIs.</span>
+                  <strong>Configuration stays outside the workflow</strong>
+                  <span>Client-specific sheet, alert, and filtering settings are loaded from environment configuration.</span>
                 </div>
               </div>
             </div>
@@ -1180,26 +1157,24 @@
             <div>
               <div class="panel-label panel-label-spaced">System capabilities</div>
               <ul class="bullet-list">
-                <li>AI missed-call intake and lead capture</li>
-                <li>Urgency detection and priority routing</li>
-                <li>SMS and email notification pipelines</li>
-                <li>AI voice agent with structured data extraction</li>
+                <li>AI voice intake and structured lead capture</li>
+                <li>Urgency fields and configurable junk filtering</li>
                 <li>n8n workflow orchestration</li>
-                <li>FastAPI backend for business logic and state</li>
-                <li>Multi-channel follow-up sequences</li>
+                <li>Google Sheets lead records</li>
+                <li>Discord operational alerts</li>
+                <li>Environment-based client configuration</li>
               </ul>
             </div>
             <div>
               <div class="panel-label panel-label-spaced">Tech stack</div>
               <div class="stack-tags">
-                <span class="stack-tag">FastAPI</span>
                 <span class="stack-tag">n8n</span>
-                <span class="stack-tag">AI Voice</span>
-                <span class="stack-tag">Twilio</span>
-                <span class="stack-tag">OpenAI</span>
-                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">Vapi</span>
+                <span class="stack-tag">JavaScript</span>
                 <span class="stack-tag">Webhooks</span>
-                <span class="stack-tag">SMS / Email</span>
+                <span class="stack-tag">Google Sheets</span>
+                <span class="stack-tag">Discord</span>
+                <span class="stack-tag">PowerShell</span>
               </div>
             </div>
           </div>
@@ -1262,13 +1237,13 @@
             <div class="service-tag">Backend systems</div>
             <h3>FastAPI Backend Infrastructure</h3>
             <p>
-              Lightweight backend services that power automations, AI processing, and internal business
-              logic — deployed and operational, not proof-of-concept.
+              Lightweight backend services for integrations, validation, data shaping, and internal
+              workflow logic.
             </p>
             <ul class="bullet-list">
               <li>FastAPI endpoints for workflows, integrations, and orchestration</li>
-              <li>Auth, validation, queues, and background processing patterns</li>
-              <li>Production-ready services built for ongoing operational use</li>
+              <li>Authentication, validation, persistence, and retry patterns</li>
+              <li>Tests, setup notes, and documented failure behavior</li>
             </ul>
           </article>
         </div>
@@ -1332,33 +1307,33 @@
       <section id="stack" class="section fade-up" aria-labelledby="stack-title">
         <div class="section-head">
           <div class="section-kicker">Stack</div>
-          <h2 id="stack-title">Modern tools, chosen for useful execution</h2>
+          <h2 id="stack-title">Tools used in the work shown here</h2>
           <p>
-            I work with a pragmatic stack that supports rapid delivery, reliable integrations, and real
-            operational usage after launch.
+            The stack stays small and changes with the problem. These tools appear in the public projects
+            and working automation examples on this site.
           </p>
         </div>
         <div class="stack-grid">
           <div class="card">
             <h3>Core technologies</h3>
             <p>
-              The stack varies by project, but these are the systems I most often use to deliver production
-              automation and integration work.
+              The public projects cover workflow orchestration, API services, authentication, structured
+              data handling, persistence, testing, and operational notifications.
             </p>
             <div class="stack-tags" aria-label="Technology stack tags">
               <span class="stack-tag">n8n</span>
               <span class="stack-tag">FastAPI</span>
               <span class="stack-tag">Python</span>
-              <span class="stack-tag">PostgreSQL</span>
-              <span class="stack-tag">Supabase</span>
-              <span class="stack-tag">OpenAI APIs</span>
-              <span class="stack-tag">Claude</span>
-              <span class="stack-tag">Twilio</span>
-              <span class="stack-tag">Slack</span>
-              <span class="stack-tag">HubSpot</span>
-              <span class="stack-tag">Google Workspace</span>
+              <span class="stack-tag">JavaScript</span>
+              <span class="stack-tag">OAuth2</span>
+              <span class="stack-tag">JSON / YAML</span>
+              <span class="stack-tag">Vapi</span>
+              <span class="stack-tag">Google Sheets</span>
+              <span class="stack-tag">Discord</span>
+              <span class="stack-tag">SQLite / SQLAlchemy</span>
               <span class="stack-tag">Webhooks</span>
               <span class="stack-tag">REST APIs</span>
+              <span class="stack-tag">GitHub Actions</span>
               <span class="stack-tag">Docker</span>
             </div>
           </div>
@@ -1402,23 +1377,22 @@
       <section id="about" class="section fade-up" aria-labelledby="about-title">
         <div class="section-head">
           <div class="section-kicker">About</div>
-          <h2 id="about-title">Systems builder. Automation operator. Integration specialist.</h2>
+          <h2 id="about-title">Practical automation, API integration, and technical operations</h2>
         </div>
         <div class="about-grid">
           <div class="about-copy">
             <p>
-              I'm Michael Bentley — I build and operate practical AI automation systems for small businesses
-              that need real operational infrastructure, not consulting decks. My work spans workflow automation,
-              API integrations, AI voice and chat agents, and FastAPI backend development.
+              I'm Michael Bentley. I build practical automations and API integrations for small businesses
+              and teams that need tools connected, repetitive work reduced, or incoming data routed reliably.
             </p>
             <p>
-              I work at the implementation layer: designing for workflow reliability, operational visibility,
-              and lead routing accuracy from the start. AnsweredCall is one example of the kind of
-              AI-assisted operations systems I design and deploy.
+              I work at the implementation layer: n8n orchestration, webhooks, REST APIs, authentication,
+              structured data handling, FastAPI services, testing, and documentation. AnsweredCall applies
+              those skills to voice intake and lead routing for home-service businesses.
             </p>
             <p>
               My approach is direct: identify the bottleneck, design the flow, build what matters, and
-              deliver a system that is understandable, maintainable, and running reliably in your operations.
+              deliver a system that is understandable, testable, and straightforward to hand off.
             </p>
           </div>
           <div class="about-points">
@@ -1426,7 +1400,7 @@
             <ul class="bullet-list">
               <li>Start from a concrete operational problem, not a technology wishlist</li>
               <li>Design for lead routing accuracy, response speed, and workflow consistency</li>
-              <li>Ship lean, observable architecture that holds up as volume increases</li>
+              <li>Keep the architecture lean, observable, and appropriate to the scope</li>
               <li>Prioritize handoff clarity and long-term maintainability over novelty</li>
             </ul>
           </div>
@@ -1436,23 +1410,24 @@
       <section id="contact" class="section fade-up" aria-labelledby="contact-title">
         <div class="section-head">
           <div class="section-kicker">Contact</div>
-          <h2 id="contact-title">Hiring for integration work? Let’s talk.</h2>
+          <h2 id="contact-title">Need an automation built or evaluating me for a role?</h2>
         </div>
         <div class="contact-card">
           <div class="contact-copy">
             <p>
-              I’m open to API integration, workflow automation, and backend engineering roles where
-              reliable delivery, troubleshooting, and clear documentation matter.
+              I’m available for focused automation projects and for API integration, workflow automation,
+              and technical operations roles where troubleshooting and clear documentation matter.
             </p>
             <div class="cta-row">
-              <a class="button" href="mailto:mnbentley@gmail.com">Discuss a role</a>
-              <a class="button-secondary" href="mailto:mnbentley@gmail.com">Email me directly</a>
+              <a class="button" href="/automation-fix/#start">Discuss an automation</a>
+              <a class="button-secondary" href="mailto:mnbentley@outlook.com?subject=Discuss%20a%20role%20with%20Michael%20Bentley">Discuss a role</a>
             </div>
           </div>
           <ul class="contact-list" aria-label="Engagement details">
             <li><strong>Good fit:</strong> service businesses losing leads to slow follow-up, running disconnected tools, or doing work that should be automated.</li>
-            <li><strong>Typical work:</strong> AI lead intake, workflow automation, API integrations, AI voice agents, n8n systems, and FastAPI backend services.</li>
-            <li><strong>Also on GitHub:</strong> <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer" class="contact-accent-link">github.com/bentley-michael</a> — see what I'm building.</li>
+            <li><strong>Role fit:</strong> API integration, workflow implementation, technical operations, troubleshooting, and documentation.</li>
+            <li><strong>Email:</strong> <a href="mailto:mnbentley@outlook.com" class="contact-accent-link">mnbentley@outlook.com</a></li>
+            <li><strong>GitHub proof:</strong> <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer" class="contact-accent-link">github.com/bentley-michael</a> includes code, tests, setup notes, and architecture decisions.</li>
           </ul>
         </div>
       </section>
@@ -1461,34 +1436,13 @@
 
   <footer>
     <div class="shell">
-      <div>© <span id="year"></span> Michael Bentley. AI automation systems, integrations, and backend infrastructure for small businesses.</div>
+      <div>© <span id="year"></span> Michael Bentley. Automation and API integration.</div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.16 }
-      );
-
-      document.querySelectorAll(".fade-up").forEach((element) => {
-        observer.observe(element);
-      });
-    } else {
-      document.querySelectorAll(".fade-up").forEach((element) => {
-        element.classList.add("is-visible");
-      });
-    }
   </script>
 </body>
 </html>
