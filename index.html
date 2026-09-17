@@ -977,6 +977,192 @@
       outline-offset: 3px;
     }
 
+    /* Human-centered professional refinement */
+    :root {
+      --bg: #f7f4ed;
+      --bg-soft: #eee9df;
+      --panel-strong: #fffdf8;
+      --panel-alt: #e8eef1;
+      --line: #d8d1c4;
+      --line-strong: #263746;
+      --text: #1c2832;
+      --muted: #5e625f;
+      --accent: #245674;
+      --accent-2: #245674;
+      --accent-3: #a14f36;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --max: 1180px;
+    }
+
+    .site-header { border-bottom-color: var(--line); }
+    .header-inner { flex-wrap: wrap; }
+    .brand-mark { border-radius: 50%; background: var(--accent-3); }
+    .nav {
+      gap: 4px;
+      font-family: "Manrope", system-ui, sans-serif;
+      font-size: .84rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .nav a { border: 0; border-radius: 6px; }
+
+    .hero { padding-top: 58px; }
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      gap: 36px;
+      border: 0;
+      align-items: center;
+    }
+    .hero-copy { padding: 34px 0 20px; }
+    h1 {
+      max-width: 13ch;
+      font-size: clamp(2.8rem, 5.2vw, 4.9rem);
+      line-height: 1.01;
+      letter-spacing: -.05em;
+    }
+    .hero-copy p { max-width: 61ch; }
+    .hero-panel {
+      padding: 34px;
+      border: 1px solid #cbd6db;
+      border-left: 1px solid #cbd6db;
+      border-radius: var(--radius);
+      background: var(--panel-alt);
+    }
+    .panel-top { display: block; }
+    .panel-top h2 { max-width: 18ch; font-size: 1.55rem; line-height: 1.2; }
+    .status-pill { display: block; margin-top: 10px; text-align: left; text-transform: none; letter-spacing: 0; }
+    .panel-list { margin-top: 24px; border-top-color: #cbd6db; }
+    .panel-list li { padding: 15px 0; border-bottom-color: #cbd6db; }
+    .panel-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .panel-list span { margin-top: 4px; }
+
+    .eyebrow,
+    .service-tag,
+    .status-pill,
+    .section-kicker,
+    .panel-label {
+      font-family: "Manrope", system-ui, sans-serif;
+    }
+    .eyebrow::before { content: none; }
+    .human-note {
+      max-width: 62ch;
+      margin-top: 26px;
+      padding-left: 16px;
+      border-left: 3px solid var(--accent-3);
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+    .human-note strong { color: var(--text); }
+
+    .section { padding-top: 88px; }
+    .section-head {
+      display: block;
+      padding-bottom: 24px;
+      border-bottom: 0;
+    }
+    .section-head h2 {
+      max-width: 25ch;
+      margin-top: 10px;
+      font-size: clamp(1.9rem, 3.4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+    .section-head p { max-width: 65ch; margin-top: 14px; }
+
+    #projects .card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      border: 0;
+    }
+    #projects .card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+    }
+    #projects .card h3 { margin-top: 12px; font-size: 1.45rem; }
+    #projects .project-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 42px;
+      padding: 38px;
+      border-color: #c9d5da;
+      background: linear-gradient(135deg, #fffdf8 0%, #eef3f4 100%);
+    }
+    #projects .project-featured h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    .project-flow {
+      align-self: center;
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      background: #1f3544;
+      color: #fff;
+    }
+    .project-flow-title { margin-bottom: 18px; font-weight: 800; }
+    .project-flow-step { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 12px 0; }
+    .project-flow-step + .project-flow-step { border-top: 1px solid rgba(255,255,255,.16); }
+    .project-flow-step span:first-child { color: #e3a891; font-weight: 800; }
+    .project-flow-step small { display: block; margin-top: 3px; color: #c8d2d8; line-height: 1.45; }
+
+    #featured { display: none; }
+    .stack-grid, .about-grid, .contact-card {
+      gap: 18px;
+      border: 0;
+    }
+    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-strong);
+    }
+    .stack-diagram + .card, .about-points, .contact-list { border-left: 1px solid var(--line); }
+    .flow-step:last-child { border-bottom: 0; }
+    .stack-tag { border-radius: 999px; background: var(--bg-soft); }
+    .contact-list { background: var(--accent); border-color: var(--accent); }
+
+    .button, .button-secondary {
+      border-radius: 7px;
+      font-family: "Manrope", system-ui, sans-serif;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, #projects .project-featured { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 680px; }
+    }
+
+    @media (max-width: 719px) {
+      .site-header { position: sticky; }
+      .header-inner { gap: 8px; }
+      .nav {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 4px 0 2px;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a:nth-child(3), .nav a:nth-child(4), .nav a:nth-child(6) { display: none; }
+      .hero { padding-top: 34px; }
+      .hero-copy { padding-top: 20px; }
+      .hero-panel { padding: 26px; border: 1px solid #cbd6db; }
+      h1 { font-size: clamp(2.55rem, 12.5vw, 4rem); }
+      .section { padding-top: 68px; }
+      #projects .card-grid { grid-template-columns: 1fr; }
+      #projects .project-featured { grid-column: auto; padding: 26px; gap: 28px; }
+      #projects .card { padding: 26px; }
+      .project-flow { padding: 20px; }
+      .stack-diagram + .card, .about-points, .contact-list { border-top: 1px solid var(--line); }
+    }
+
   </style>
 </head>
 <body>
@@ -1003,7 +1189,7 @@
         <div class="eyebrow">Automation &amp; API integration specialist</div>
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title">Automation &amp; API Integration Specialist</h1>
+            <h1 id="hero-title">I connect the tools your work depends on.</h1>
             <p>
               I build practical n8n workflows, webhook services, and FastAPI integrations that move data
               between tools, route leads, and make failures easier to see and recover from.
@@ -1016,38 +1202,29 @@
               <a class="button" href="/automation-fix/">Discuss an automation</a>
               <a class="button-secondary" href="#projects">View projects</a>
             </div>
-            <div class="signal-row" aria-label="Core focus areas">
-              <div class="signal">
-                <strong>For small businesses</strong>
-                <span>Focused automations for lead intake, alerts, data routing, and repetitive admin work.</span>
-              </div>
-              <div class="signal">
-                <strong>For technical teams</strong>
-                <span>Documented API and integration work with tests, error handling, and clear handoff.</span>
-              </div>
-            </div>
+            <div class="human-note"><strong>I’m Michael, based in Nashville.</strong> I focus on the unglamorous work that matters: moving information cleanly, making failures visible, and leaving behind documentation another person can use.</div>
           </div>
 
           <aside class="hero-panel" aria-label="Typical engagements">
             <div class="panel-top">
               <div>
-                <div class="panel-label">Technical profile</div>
-                <h2>Integration work that accounts for retries and failures</h2>
+                <div class="panel-label">What I build</div>
+                <h2>Useful automation with a clear handoff</h2>
               </div>
               <div class="status-pill">Nashville, TN<br />Open to remote</div>
             </div>
             <ul class="panel-list">
               <li>
-                <strong>Secure webhook ingestion</strong>
-                <span>HMAC verification, timestamp tolerance, idempotent persistence, and replay-safe responses.</span>
+                <strong>Connect tools and APIs</strong>
+                <span>Move data between forms, CRMs, spreadsheets, inboxes, and business systems.</span>
               </li>
               <li>
-                <strong>OAuth2 lifecycle &amp; data sync</strong>
-                <span>Authorization flows, encrypted token storage, refresh recovery, pagination, and checkpoints.</span>
+                <strong>Automate repetitive steps</strong>
+                <span>Route leads, create records, trigger alerts, and reduce copy-and-paste work.</span>
               </li>
               <li>
-                <strong>Workflow orchestration</strong>
-                <span>n8n and FastAPI systems with validation, routing, retries, logging, and visible failure paths.</span>
+                <strong>Plan for failure</strong>
+                <span>Add validation, retries, duplicate protection, logging, and straightforward documentation.</span>
               </li>
             </ul>
           </aside>
@@ -1056,49 +1233,51 @@
 
       <section id="projects" class="section fade-up" aria-labelledby="projects-title">
         <div class="section-head">
-          <div class="section-kicker">Selected Projects</div>
-          <h2 id="projects-title">Working examples with code and setup notes</h2>
-          <p>Public repositories showing architecture, authentication, validation, error handling, testing, and implementation decisions.</p>
+          <div class="section-kicker">Selected work</div>
+          <h2 id="projects-title">Real workflows and code you can inspect</h2>
+          <p>One business-facing automation and two technical integration projects, each with public code and setup notes.</p>
         </div>
         <div class="card-grid">
+          <article class="card project-featured">
+            <div>
+            <div class="service-tag">Featured build · Vapi · n8n</div>
+            <h3>Contractor Intake AI</h3>
+            <p>A voice-intake workflow that turns a contractor’s missed call into a structured lead and an immediate operational alert.</p>
+            <ul class="bullet-list">
+              <li><strong>Problem:</strong> missed calls and inconsistent intake can cost home-service businesses leads</li>
+              <li><strong>Build:</strong> Vapi voice intake → webhook → n8n → Google Sheets and Discord</li>
+              <li><strong>Proof:</strong> importable workflow, configuration guide, and demo instructions</li>
+            </ul>
+            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">View repository</a></div>
+            </div>
+            <div class="project-flow" aria-label="Contractor Intake AI workflow">
+              <div class="project-flow-title">From missed call to actionable lead</div>
+              <div class="project-flow-step"><span>01</span><div><strong>Voice intake</strong><small>Collect contact, service, location, and urgency.</small></div></div>
+              <div class="project-flow-step"><span>02</span><div><strong>Structure and filter</strong><small>Normalize the payload and separate useful leads from junk.</small></div></div>
+              <div class="project-flow-step"><span>03</span><div><strong>Record and alert</strong><small>Write the lead to Sheets and notify the team in Discord.</small></div></div>
+            </div>
+          </article>
           <article class="card">
             <div class="service-tag">FastAPI · Webhooks</div>
             <h3>Integration Lab</h3>
-            <p>A webhook ingestion service designed to process retried and duplicated financial events safely.</p>
+            <p>A webhook service designed to handle retried and duplicated events safely.</p>
             <ul class="bullet-list">
-              <li><strong>Problem:</strong> duplicate deliveries and untrusted payloads can corrupt downstream state</li>
-              <li><strong>Architecture:</strong> FastAPI endpoint, signature verification, persistence, and processing boundary</li>
-              <li><strong>Auth:</strong> HMAC signature validation before business logic</li>
-              <li><strong>Error handling:</strong> idempotency keys, validation failures, and replay-safe responses</li>
-              <li><strong>Proof:</strong> working API, tests, Docker setup, and documented demo</li>
+              <li>HMAC signature validation</li>
+              <li>Idempotency and replay protection</li>
+              <li>Tests, Docker setup, and documented failure behavior</li>
             </ul>
             <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/integration-lab" target="_blank" rel="noreferrer">View repository</a></div>
           </article>
           <article class="card">
             <div class="service-tag">FastAPI · OAuth2</div>
             <h3>OAuth Sync Lab</h3>
-            <p>An OAuth2 integration and sync engine built around token lifecycle, pagination, and recoverable failures.</p>
+            <p>An OAuth2 integration and sync engine built around token lifecycle and recoverable failures.</p>
             <ul class="bullet-list">
-              <li><strong>Problem:</strong> external account data must stay synchronized despite expired tokens and partial runs</li>
-              <li><strong>Architecture:</strong> OAuth callback, encrypted tokens, provider client, and incremental sync service</li>
-              <li><strong>Auth:</strong> authorization-code flow with refresh-token handling</li>
-              <li><strong>Error handling:</strong> refresh recovery, rate-limit retries, pagination, and checkpoints</li>
-              <li><strong>Proof:</strong> working API, tests, setup guide, and architecture notes</li>
+              <li>Authorization-code and refresh-token handling</li>
+              <li>Rate-limit retries, pagination, and checkpoints</li>
+              <li>Tests, setup guide, and architecture notes</li>
             </ul>
             <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/oauth-sync-lab" target="_blank" rel="noreferrer">View repository</a></div>
-          </article>
-          <article class="card">
-            <div class="service-tag">Vapi · n8n</div>
-            <h3>Contractor Intake AI</h3>
-            <p>A voice-intake pipeline that converts contractor calls into structured leads and operational alerts.</p>
-            <ul class="bullet-list">
-              <li><strong>Problem:</strong> missed calls and inconsistent intake cause contractors to lose leads</li>
-              <li><strong>Architecture:</strong> Vapi → webhook → n8n → Google Sheets and Discord</li>
-              <li><strong>Config:</strong> environment-based client and alert configuration</li>
-              <li><strong>Routing:</strong> payload normalization, junk filtering, and separate lead paths</li>
-              <li><strong>Proof:</strong> importable workflow, configuration guide, and demo instructions</li>
-            </ul>
-            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">View repository</a></div>
           </article>
         </div>
       </section>
