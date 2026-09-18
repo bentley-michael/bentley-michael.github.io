@@ -21,1148 +21,120 @@
   />
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0c1728;
-      --panel: rgba(10, 18, 31, 0.76);
-      --panel-strong: #101d32;
-      --panel-alt: #0f1a2c;
-      --line: rgba(164, 186, 255, 0.16);
-      --line-strong: rgba(164, 186, 255, 0.28);
-      --text: #f4f7fb;
-      --muted: #98a7c2;
-      --accent: #7df0cb;
-      --accent-2: #78a8ff;
-      --accent-3: #ffd98a;
-      --shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
-      --radius: 22px;
-      --radius-sm: 16px;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-width: 320px;
-      font-family: "Manrope", system-ui, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(120, 168, 255, 0.18), transparent 34%),
-        radial-gradient(circle at top right, rgba(125, 240, 203, 0.12), transparent 28%),
-        radial-gradient(circle at 50% 120%, rgba(255, 217, 138, 0.09), transparent 30%),
-        linear-gradient(180deg, #07111f 0%, #09111d 42%, #050b15 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(circle at center, black 32%, transparent 85%);
-      opacity: 0.32;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .shell {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      backdrop-filter: blur(18px);
-      background: rgba(7, 12, 21, 0.72);
-      border-bottom: 1px solid rgba(164, 186, 255, 0.08);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 0;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-    }
-
-    .brand-mark {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 24px rgba(125, 240, 203, 0.45);
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .nav a {
-      padding: 10px 12px;
-      border-radius: 999px;
-      transition: background-color 180ms ease, color 180ms ease;
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text);
-      outline: none;
-    }
-
-    main {
-      padding: 28px 0 84px;
-    }
-
-    .hero {
-      display: grid;
-      gap: 18px;
-      padding: 18px 0 28px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      gap: 10px;
-      padding: 8px 12px;
-      border: 1px solid rgba(125, 240, 203, 0.18);
-      border-radius: 999px;
-      background: rgba(125, 240, 203, 0.08);
-      color: #d8fff3;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-panel,
-    .card,
-    .stack-diagram,
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(16, 29, 50, 0.94), rgba(10, 18, 31, 0.88));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy,
-    .hero-panel,
-    .contact-card {
-      padding: 24px;
-    }
-
-    .hero-copy::after,
-    .hero-panel::after,
-    .card::after,
-    .stack-diagram::after,
-    .contact-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -10% -45% auto;
-      width: 160px;
-      height: 160px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(120, 168, 255, 0.18), transparent 72%);
-      pointer-events: none;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      margin: 0;
-      font-family: "Sora", "Manrope", system-ui, sans-serif;
-      letter-spacing: -0.03em;
-    }
-
-    h1 {
-      margin-top: 16px;
-      font-size: clamp(2.3rem, 7vw, 4.6rem);
-      line-height: 1.02;
-      max-width: 12ch;
-    }
-
-    .hero-copy p {
-      margin: 18px 0 0;
-      max-width: 62ch;
-      color: #d2dbeb;
-      font-size: 1.02rem;
-      line-height: 1.75;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .button,
-    .button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
-    }
-
-    .button {
-      background: linear-gradient(135deg, var(--accent), #b7ffe6);
-      color: #051019;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
-    }
-
-    .button:hover,
-    .button-secondary:hover,
-    .button:focus-visible,
-    .button-secondary:focus-visible {
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .signal-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .signal {
-      padding: 14px;
-      border: 1px solid rgba(164, 186, 255, 0.12);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .signal strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .signal span {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .hero-panel {
-      display: grid;
-      gap: 18px;
-      background:
-        linear-gradient(180deg, rgba(16, 29, 50, 0.96), rgba(7, 13, 24, 0.92)),
-        linear-gradient(135deg, rgba(120, 168, 255, 0.22), transparent 45%);
-    }
-
-    .panel-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .panel-label {
-      color: var(--accent);
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .status-pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 217, 138, 0.12);
-      border: 1px solid rgba(255, 217, 138, 0.18);
-      color: #ffe6ac;
-      font-size: 0.82rem;
-      white-space: nowrap;
-    }
-
-    .panel-list,
-    .bullet-list,
-    .stack-list,
-    .contact-list {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .panel-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .panel-list li {
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(164, 186, 255, 0.12);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .panel-list strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 0.98rem;
-    }
-
-    .panel-list span {
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.55;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .metric {
-      padding: 14px;
-      border-radius: 16px;
-      background: rgba(6, 11, 19, 0.56);
-      border: 1px solid rgba(164, 186, 255, 0.12);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.25rem;
-      color: var(--text);
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.45;
-    }
-
-    .section {
-      padding-top: 28px;
-    }
-
-    .section-head {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .section-kicker {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    h2 {
-      font-size: clamp(1.7rem, 4vw, 2.8rem);
-      line-height: 1.08;
-    }
-
-    .section-head p,
-    .card p,
-    .about-copy p,
-    .contact-copy p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .card-grid,
-    .use-grid,
-    .stack-grid,
-    .about-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .card {
-      padding: 22px;
-    }
-
-    .service-tag,
-    .stack-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(164, 186, 255, 0.12);
-      background: rgba(255, 255, 255, 0.03);
-      color: #dbe6f8;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .card h3 {
-      margin-top: 16px;
-      font-size: 1.25rem;
-    }
-
-    .card p {
-      margin-top: 12px;
-      font-size: 0.98rem;
-    }
-
-    .bullet-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .bullet-list li {
-      position: relative;
-      padding-left: 18px;
-      color: #d2dbeb;
-      line-height: 1.6;
-    }
-
-    .bullet-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.7em;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 18px rgba(125, 240, 203, 0.32);
-    }
-
-    .use-grid .card {
-      background: linear-gradient(180deg, rgba(13, 25, 43, 0.9), rgba(9, 16, 28, 0.88));
-    }
-
-    .stack-grid {
-      align-items: start;
-    }
-
-    .stack-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .stack-tag {
-      font-size: 0.84rem;
-      text-transform: none;
-      letter-spacing: 0;
-      color: #eef4ff;
-    }
-
-    .stack-diagram {
-      padding: 24px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .flow {
-      display: grid;
-      gap: 12px;
-    }
-
-    .flow-step {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(164, 186, 255, 0.1);
-    }
-
-    .flow-step:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .flow-index {
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      background: rgba(120, 168, 255, 0.14);
-      color: #dce8ff;
-      font-weight: 800;
-      font-size: 0.92rem;
-    }
-
-    .flow-step strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .flow-step span {
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .about-grid {
-      align-items: stretch;
-    }
-
-    .about-copy,
-    .about-points {
-      padding: 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(16, 29, 50, 0.94), rgba(8, 14, 24, 0.88));
-      box-shadow: var(--shadow);
-    }
-
-    .about-copy p + p {
-      margin-top: 16px;
-    }
-
-    .about-points h3 {
-      font-size: 1.15rem;
-    }
-
-    .contact-card {
-      display: grid;
-      gap: 22px;
-      margin-top: 10px;
-      background:
-        linear-gradient(180deg, rgba(16, 29, 50, 0.96), rgba(8, 14, 24, 0.92)),
-        radial-gradient(circle at top left, rgba(125, 240, 203, 0.16), transparent 28%);
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 12px;
-      color: #d8e2f3;
-    }
-
-    .contact-list li {
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(164, 186, 255, 0.12);
-      background: rgba(255, 255, 255, 0.03);
-      line-height: 1.6;
-    }
-
-    footer {
-      padding: 22px 0 36px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .fade-up {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
-    .fade-up.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (min-width: 720px) {
-      .hero-copy,
-      .hero-panel,
-      .contact-card,
-      .about-copy,
-      .about-points,
-      .stack-diagram,
-      .card {
-        padding: 28px;
-      }
-
-      .hero-grid,
-      .stack-grid,
-      .about-grid,
-      .contact-card {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .card-grid,
-      .use-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-card {
-        align-items: center;
-      }
-    }
-
-    @media (min-width: 980px) {
-      main {
-        padding-top: 42px;
-      }
-
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .use-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .fade-up {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-
-      .button,
-      .button-secondary {
-        transition: none;
-      }
-    }
-    .hero-subtext {
-      margin-top: 12px;
-      color: #d2dbeb;
-      font-size: 0.97rem;
-      line-height: 1.7;
-    }
-
-    .featured-card {
-      display: grid;
-      gap: 18px;
-      align-content: start;
-    }
-
-    .panel-label-spaced {
-      margin-bottom: 10px;
-    }
-
-    .contact-accent-link {
-      color: var(--accent);
-    }
-
-    /* Editorial portfolio theme */
-    :root {
-      --bg: #f5f2ea;
-      --bg-soft: #ebe7dd;
-      --panel: transparent;
-      --panel-strong: #f3f0e8;
-      --panel-alt: #ebe7de;
-      --line: #c3bdb1;
-      --line-strong: #1b1b19;
-      --text: #1b1b19;
-      --muted: #625f57;
-      --accent: #1d4f7a;
-      --accent-2: #1d4f7a;
-      --accent-3: #a5412d;
-      --shadow: none;
-      --radius: 0;
-      --radius-sm: 0;
-      --max: 1320px;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    body::before { display: none; }
-
-    .site-header {
-      background: rgba(245, 242, 234, 0.96);
-      border-bottom: 1px solid var(--line-strong);
-      backdrop-filter: blur(10px);
-    }
-
-    .header-inner { padding: 14px 0; }
-
-    .brand {
-      gap: 10px;
-      font-family: "Sora", sans-serif;
-      font-size: .94rem;
-      letter-spacing: -.02em;
-    }
-
-    .brand-mark {
-      width: 9px;
-      height: 9px;
-      border-radius: 0;
-      background: var(--accent);
-      box-shadow: none;
-    }
-
-    .nav {
-      gap: 0;
-      color: var(--text);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-
-    .nav a {
-      padding: 8px 10px;
-      border-radius: 0;
-      border-left: 1px solid transparent;
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: #fff;
-      background: var(--accent);
-    }
-
-    main { padding-top: 0; }
-
-    .hero {
-      padding: 48px 0 0;
-      gap: 20px;
-    }
-
-    .eyebrow,
-    .service-tag,
-    .stack-tag,
-    .status-pill {
-      border-radius: 0;
-      background: transparent;
-      border: 0;
-      color: var(--accent);
-      padding: 0;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before { content: "01 / "; color: var(--muted); }
-
-    .hero-grid {
-      gap: 0;
-      border-top: 1px solid var(--line-strong);
-      border-bottom: 1px solid var(--line-strong);
-    }
-
-    .hero-copy,
-    .hero-panel,
-    .card,
-    .stack-diagram,
-    .contact-card,
-    .about-copy,
-    .about-points {
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-      overflow: visible;
-    }
-
-    .hero-copy::after,
-    .hero-panel::after,
-    .card::after,
-    .stack-diagram::after,
-    .contact-card::after { display: none; }
-
-    .hero-copy { padding: 54px 48px 54px 0; }
-
-    h1 {
-      margin: 0;
-      max-width: 12ch;
-      font-size: clamp(3rem, 6.2vw, 6.2rem);
-      line-height: .96;
-      letter-spacing: -.06em;
-    }
-
-    .hero-copy p {
-      max-width: 58ch;
-      color: var(--text);
-      font-size: 1.05rem;
-      line-height: 1.65;
-    }
-
-    .hero-subtext { color: var(--muted) !important; }
-
-    .hero-panel {
-      padding: 54px 0 54px 40px;
-      border-left: 1px solid var(--line-strong);
-      align-content: start;
-    }
-
-    .panel-top { align-items: flex-start; }
-    .panel-top h2 { margin-top: 14px; font-size: 2rem; }
-    .status-pill { color: var(--muted); white-space: normal; text-align: right; }
-
-    .panel-list { gap: 0; border-top: 1px solid var(--line); }
-    .panel-list li {
-      padding: 18px 0;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      border-radius: 0;
-      background: transparent;
-    }
-    .panel-list span { color: var(--muted); }
-
-    .button,
-    .button-secondary {
-      min-height: 44px;
-      border-radius: 0;
-      padding: 0 16px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .76rem;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-    .button { color: #fff; background: var(--accent); border: 1px solid var(--accent); }
-    .button-secondary { color: var(--text); background: transparent; border: 1px solid var(--line-strong); }
-    .button:hover, .button:focus-visible { background: var(--text); border-color: var(--text); }
-    .button-secondary:hover, .button-secondary:focus-visible { color: #fff; background: var(--text); }
-
-    .signal-row {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      border-top: 1px solid var(--line);
-    }
-    .signal {
-      min-height: 0;
-      padding: 20px 0 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-    .signal + .signal { padding-left: 24px; border-left: 1px solid var(--line); }
-    .signal strong { font-family: "Sora", sans-serif; }
-    .signal span { color: var(--muted); }
-
-    .section { padding-top: 80px; }
-    .section-head {
-      grid-template-columns: minmax(130px, .3fr) 1fr;
-      align-items: start;
-      gap: 30px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line-strong);
-    }
-    .section-head h2 { max-width: 24ch; font-size: clamp(2.25rem, 4.2vw, 4.2rem); line-height: 1.02; letter-spacing: -.05em; }
-    .section-head p { grid-column: 2; max-width: 64ch; color: var(--muted); }
-    .section-kicker, .panel-label {
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .72rem;
-      letter-spacing: .08em;
-    }
-
-    .card-grid, .use-grid { gap: 0; border-left: 1px solid var(--line); }
-    .card {
-      padding: 26px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .card h3 { margin-top: 20px; font-size: 1.35rem; line-height: 1.15; }
-    .card p { color: var(--muted); }
-    .bullet-list li { color: var(--text); }
-    .bullet-list li::before { width: 6px; height: 6px; border-radius: 0; background: var(--accent); box-shadow: none; }
-
-    #projects .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    #projects .card { padding-top: 34px; }
-    #projects .card h3 { font-size: 1.65rem; }
-
-    /* Client-sales sections are intentionally excluded from the recruiter edition. */
-    #services, #use-cases { display: none; }
-
-    .stack-grid, .about-grid, .contact-card { gap: 0; border: 1px solid var(--line-strong); }
-    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 30px; }
-    .stack-diagram + .card, .about-points, .contact-list { border-left: 1px solid var(--line-strong); }
-
-    .flow { gap: 0; }
-    .flow-step { border-bottom: 1px solid var(--line); }
-    .flow-index { border-radius: 0; background: var(--accent); color: #fff; }
-    .flow-step span, .about-copy p, .contact-copy p { color: var(--muted); }
-
-    .stack-tags { gap: 8px; }
-    .stack-tag { padding: 8px 10px; border: 1px solid var(--line); color: var(--text); }
-
-    .contact-card { margin-top: 0; }
-    .contact-list { background: var(--accent); color: #fff; }
-    .contact-list li { border: 0; border-bottom: 1px solid rgba(255,255,255,.35); border-radius: 0; background: transparent; }
-    .contact-accent-link { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-
-    footer { margin-top: 80px; border-top: 1px solid var(--line-strong); color: var(--muted); }
-
-    @media (max-width: 979px) {
-      .hero-copy { padding-right: 24px; }
-      .hero-panel { padding-left: 24px; }
-      #projects .card-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 719px) {
-      .site-header { position: relative; }
-      .header-inner { align-items: flex-start; }
-      .nav { display: none; }
-      .hero { padding-top: 34px; }
-      .hero-copy { padding: 34px 0; }
-      .hero-panel { padding: 30px 0; border-left: 0; border-top: 1px solid var(--line-strong); }
-      h1 { font-size: clamp(3rem, 15vw, 5rem); }
-      .section { padding-top: 64px; }
-      .section-head { grid-template-columns: 1fr; gap: 14px; }
-      .section-head p { grid-column: 1; }
-      .card-grid, .use-grid { grid-template-columns: 1fr; }
-      .stack-grid, .about-grid, .contact-card { grid-template-columns: 1fr; }
-      .stack-diagram + .card, .about-points, .contact-list { border-left: 0; border-top: 1px solid var(--line-strong); }
-      .signal-row { grid-template-columns: 1fr; }
-      .signal + .signal { padding-left: 0; border-left: 0; }
-    }
-
-    .site-header a:focus-visible,
-    .button:focus-visible,
-    .button-secondary:focus-visible,
-    .contact-accent-link:focus-visible,
-    button:focus-visible {
-      outline: 3px solid var(--accent-3);
-      outline-offset: 3px;
-    }
-
-    /* Human-centered professional refinement */
-    :root {
-      --bg: #f7f4ed;
-      --bg-soft: #eee9df;
-      --panel-strong: #fffdf8;
-      --panel-alt: #e8eef1;
-      --line: #d8d1c4;
-      --line-strong: #263746;
-      --text: #1c2832;
-      --muted: #5e625f;
-      --accent: #245674;
-      --accent-2: #245674;
-      --accent-3: #a14f36;
+      --bg: #f2f5f7;
+      --surface: #ffffff;
+      --soft-blue: #e8f0f5;
+      --line: #d2dce3;
+      --blue-line: #c5d4df;
+      --text: #172532;
+      --muted: #586775;
+      --accent: #245f80;
+      --accent-light: #4f86a5;
       --radius: 12px;
-      --radius-sm: 8px;
       --max: 1180px;
     }
 
-    .site-header { border-bottom-color: var(--line); }
-    .header-inner { flex-wrap: wrap; }
-    .brand-mark { border-radius: 50%; background: var(--accent-3); }
-    .nav {
-      gap: 4px;
-      font-family: "Manrope", system-ui, sans-serif;
-      font-size: .84rem;
-      font-weight: 700;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-    .nav a { border: 0; border-radius: 6px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: "Manrope", system-ui, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(242, 245, 247, .96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-family: "Sora", sans-serif; font-size: .94rem; font-weight: 800; letter-spacing: -.02em; }
+    .brand-mark { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-light); }
+    .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; font-size: .84rem; font-weight: 700; }
+    .nav a { padding: 8px 10px; border-radius: 6px; }
+    .nav a:hover, .nav a:focus-visible { background: var(--accent); color: #fff; }
+
+    main { padding-bottom: 84px; }
     .hero { padding-top: 58px; }
-    .hero-grid {
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
-      gap: 36px;
-      border: 0;
-      align-items: center;
-    }
+    .eyebrow, .section-kicker, .service-tag, .panel-label { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 36px; align-items: center; }
     .hero-copy { padding: 34px 0 20px; }
-    h1 {
-      max-width: 13ch;
-      font-size: clamp(2.8rem, 5.2vw, 4.9rem);
-      line-height: 1.01;
-      letter-spacing: -.05em;
-    }
-    .hero-copy p { max-width: 61ch; }
-    .hero-panel {
-      padding: 34px;
-      border: 1px solid #cbd6db;
-      border-left: 1px solid #cbd6db;
-      border-radius: var(--radius);
-      background: var(--panel-alt);
-    }
-    .panel-top { display: block; }
-    .panel-top h2 { max-width: 18ch; font-size: 1.55rem; line-height: 1.2; }
-    .status-pill { display: block; margin-top: 10px; text-align: left; text-transform: none; letter-spacing: 0; }
-    .panel-list { margin-top: 24px; border-top-color: #cbd6db; }
-    .panel-list li { padding: 15px 0; border-bottom-color: #cbd6db; }
-    .panel-list li:last-child { border-bottom: 0; padding-bottom: 0; }
-    .panel-list span { margin-top: 4px; }
-
-    .eyebrow,
-    .service-tag,
-    .status-pill,
-    .section-kicker,
-    .panel-label {
-      font-family: "Manrope", system-ui, sans-serif;
-    }
-    .eyebrow::before { content: none; }
-    .human-note {
-      max-width: 62ch;
-      margin-top: 26px;
-      padding-left: 16px;
-      border-left: 3px solid var(--accent-3);
-      color: var(--muted);
-      font-size: .95rem;
-      line-height: 1.65;
-    }
+    h1, h2, h3 { margin: 0; font-family: "Sora", "Manrope", system-ui, sans-serif; }
+    h1 { max-width: 13ch; font-size: clamp(2.8rem, 5.2vw, 4.9rem); line-height: 1.01; letter-spacing: -.05em; }
+    .hero-copy p { max-width: 61ch; margin: 24px 0 0; font-size: 1.05rem; line-height: 1.65; }
+    .hero-subtext { color: var(--muted); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .button, .button-secondary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 7px; font-size: .82rem; font-weight: 800; }
+    .button { border: 1px solid var(--accent); background: var(--accent); color: #fff; }
+    .button-secondary { border: 1px solid #89949a; background: transparent; color: var(--text); }
+    .button:hover, .button:focus-visible { border-color: var(--text); background: var(--text); }
+    .button-secondary:hover, .button-secondary:focus-visible { background: var(--text); color: #fff; }
+    .human-note { max-width: 62ch; margin-top: 26px; padding-left: 16px; border-left: 3px solid var(--accent-light); color: var(--muted); font-size: .95rem; line-height: 1.65; }
     .human-note strong { color: var(--text); }
 
-    .section { padding-top: 88px; }
-    .section-head {
-      display: block;
-      padding-bottom: 24px;
-      border-bottom: 0;
-    }
-    .section-head h2 {
-      max-width: 25ch;
-      margin-top: 10px;
-      font-size: clamp(1.9rem, 3.4vw, 3.2rem);
-      line-height: 1.08;
-      letter-spacing: -.04em;
-    }
-    .section-head p { max-width: 65ch; margin-top: 14px; }
+    .hero-panel { padding: 34px; border: 1px solid var(--blue-line); border-radius: var(--radius); background: var(--soft-blue); }
+    .panel-top h2 { max-width: 18ch; margin-top: 14px; font-size: 1.55rem; line-height: 1.2; }
+    .status-pill { display: block; margin-top: 10px; color: var(--muted); font-size: .78rem; font-weight: 700; }
+    .panel-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--blue-line); }
+    .panel-list li { padding: 15px 0; border-bottom: 1px solid var(--blue-line); }
+    .panel-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+    .panel-list strong, .panel-list span { display: block; }
+    .panel-list span { margin-top: 4px; color: var(--muted); font-size: .92rem; line-height: 1.55; }
 
-    #projects .card-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      border: 0;
-    }
-    #projects .card {
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel-strong);
-    }
-    #projects .card h3 { margin-top: 12px; font-size: 1.45rem; }
-    #projects .project-featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-      gap: 42px;
-      padding: 38px;
-      border-color: #c9d5da;
-      background: linear-gradient(135deg, #fffdf8 0%, #eef3f4 100%);
-    }
-    #projects .project-featured h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
-    .project-flow {
-      align-self: center;
-      padding: 24px;
-      border-radius: var(--radius-sm);
-      background: #1f3544;
-      color: #fff;
-    }
+    .section { padding-top: 88px; }
+    .section-head { padding-bottom: 24px; }
+    .section-head h2 { max-width: 25ch; margin-top: 10px; font-size: clamp(1.9rem, 3.4vw, 3.2rem); line-height: 1.08; letter-spacing: -.04em; }
+    .section-head p { max-width: 65ch; margin: 14px 0 0; color: var(--muted); line-height: 1.7; }
+
+    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .card h3 { margin-top: 12px; font-size: 1.45rem; line-height: 1.2; }
+    .card p { color: var(--muted); line-height: 1.65; }
+    .bullet-list { list-style: none; margin: 20px 0 0; padding: 0; }
+    .bullet-list li { position: relative; padding: 8px 0 8px 16px; line-height: 1.55; }
+    .bullet-list li::before { content: ""; position: absolute; top: 17px; left: 0; width: 6px; height: 6px; background: var(--accent); }
+    .project-featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: 42px; padding: 38px; border-color: var(--blue-line); background: linear-gradient(135deg, #ffffff 0%, #edf3f7 100%); }
+    .project-featured h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    .project-flow { align-self: center; padding: 24px; border-radius: 8px; background: #1f3544; color: #fff; }
     .project-flow-title { margin-bottom: 18px; font-weight: 800; }
     .project-flow-step { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 12px 0; }
     .project-flow-step + .project-flow-step { border-top: 1px solid rgba(255,255,255,.16); }
-    .project-flow-step span:first-child { color: #e3a891; font-weight: 800; }
+    .project-flow-step > span { color: #8cc2df; font-weight: 800; }
     .project-flow-step small { display: block; margin-top: 3px; color: #c8d2d8; line-height: 1.45; }
 
-    #featured { display: none; }
-    .stack-grid, .about-grid, .contact-card {
-      gap: 18px;
-      border: 0;
-    }
-    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list {
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel-strong);
-    }
-    .stack-diagram + .card, .about-points, .contact-list { border-left: 1px solid var(--line); }
+    .stack-grid, .about-grid, .contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .stack-diagram h3, .about-points h3 { font-size: 1.25rem; }
+    .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .stack-tag { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: #edf2f5; font-size: .78rem; font-weight: 700; }
+    .flow { margin-top: 18px; }
+    .flow-step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
     .flow-step:last-child { border-bottom: 0; }
-    .stack-tag { border-radius: 999px; background: var(--bg-soft); }
-    .contact-list { background: var(--accent); border-color: var(--accent); }
+    .flow-index { display: grid; width: 28px; height: 28px; place-items: center; background: var(--accent); color: #fff; font-size: .72rem; font-weight: 800; }
+    .flow-step strong, .flow-step span { display: block; }
+    .flow-step span { margin-top: 4px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .about-copy p, .contact-copy p { margin-top: 0; color: var(--muted); line-height: 1.7; }
+    .contact-list { list-style: none; margin: 0; background: var(--accent); color: #fff; }
+    .contact-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.35); line-height: 1.55; }
+    .contact-list li:last-child { border-bottom: 0; }
+    .contact-accent-link { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    footer { padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
 
-    .button, .button-secondary {
-      border-radius: 7px;
-      font-family: "Manrope", system-ui, sans-serif;
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: 0;
-      text-transform: none;
-    }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
 
     @media (max-width: 900px) {
-      .hero-grid, #projects .project-featured { grid-template-columns: 1fr; }
+      .hero-grid, .project-featured { grid-template-columns: 1fr; }
       .hero-panel { max-width: 680px; }
     }
-
     @media (max-width: 719px) {
-      .site-header { position: sticky; }
       .header-inner { gap: 8px; }
-      .nav {
-        display: flex;
-        width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding: 4px 0 2px;
-        white-space: nowrap;
-        scrollbar-width: none;
-      }
+      .nav { width: 100%; justify-content: flex-start; overflow-x: auto; padding: 4px 0 2px; white-space: nowrap; scrollbar-width: none; }
       .nav::-webkit-scrollbar { display: none; }
       .nav a:nth-child(3), .nav a:nth-child(4), .nav a:nth-child(6) { display: none; }
       .hero { padding-top: 34px; }
       .hero-copy { padding-top: 20px; }
-      .hero-panel { padding: 26px; border: 1px solid #cbd6db; }
+      .hero-panel { padding: 26px; }
       h1 { font-size: clamp(2.55rem, 12.5vw, 4rem); }
       .section { padding-top: 68px; }
-      #projects .card-grid { grid-template-columns: 1fr; }
-      #projects .project-featured { grid-column: auto; padding: 26px; gap: 28px; }
-      #projects .card { padding: 26px; }
+      .card-grid, .stack-grid, .about-grid, .contact-card { grid-template-columns: 1fr; }
+      .project-featured { grid-column: auto; gap: 28px; padding: 26px; }
+      .card, .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 26px; }
       .project-flow { padding: 20px; }
-      .stack-diagram + .card, .about-points, .contact-list { border-top: 1px solid var(--line); }
     }
-
   </style>
 </head>
 <body>
@@ -1185,7 +157,7 @@
 
   <main id="top">
     <div class="shell">
-      <section class="hero fade-up" aria-labelledby="hero-title">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="eyebrow">Automation &amp; API integration specialist</div>
         <div class="hero-grid">
           <div class="hero-copy">
@@ -1231,7 +203,7 @@
         </div>
       </section>
 
-      <section id="projects" class="section fade-up" aria-labelledby="projects-title">
+      <section id="projects" class="section" aria-labelledby="projects-title">
         <div class="section-head">
           <div class="section-kicker">Selected work</div>
           <h2 id="projects-title">Real workflows and code you can inspect</h2>
@@ -1242,7 +214,7 @@
             <div>
             <div class="service-tag">Featured build · Vapi · n8n</div>
             <h3>Contractor Intake AI</h3>
-            <p>A voice-intake workflow that turns a contractor’s missed call into a structured lead and an immediate operational alert.</p>
+            <p>A voice-intake workflow that turns a contractor’s missed call into a structured lead and a team alert.</p>
             <ul class="bullet-list">
               <li><strong>Problem:</strong> missed calls and inconsistent intake can cost home-service businesses leads</li>
               <li><strong>Build:</strong> Vapi voice intake → webhook → n8n → Google Sheets and Discord</li>
@@ -1282,208 +254,7 @@
         </div>
       </section>
 
-      <section id="featured" class="section fade-up" aria-labelledby="featured-title">
-        <div class="section-head">
-          <div class="section-kicker">Featured Build</div>
-          <h2 id="featured-title">Featured System: AnsweredCall</h2>
-          <p>
-            A customer-facing automation offer built around voice intake, structured lead capture,
-            and immediate operational alerts for home-service businesses.
-          </p>
-        </div>
-        <div class="stack-grid">
-          <div class="stack-diagram" aria-label="AnsweredCallAI system overview">
-            <h3>How it works</h3>
-            <div class="flow">
-              <div class="flow-step">
-                <div class="flow-index">01</div>
-                <div>
-                  <strong>A caller reaches the voice intake</strong>
-                  <span>The voice agent handles the conversation and collects the information needed for follow-up.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">02</div>
-                <div>
-                  <strong>The call becomes structured data</strong>
-                  <span>Contact, location, service, urgency, and call-summary fields are normalized into a predictable schema.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">03</div>
-                <div>
-                  <strong>n8n applies routing rules</strong>
-                  <span>The workflow filters junk calls and prepares qualified leads for storage and notification.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">04</div>
-                <div>
-                  <strong>The lead is recorded and surfaced</strong>
-                  <span>Qualified lead data is written to Google Sheets and sent to Discord as an operational alert.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">05</div>
-                <div>
-                  <strong>Configuration stays outside the workflow</strong>
-                  <span>Client-specific sheet, alert, and filtering settings are loaded from environment configuration.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card featured-card">
-            <div>
-              <div class="panel-label panel-label-spaced">System capabilities</div>
-              <ul class="bullet-list">
-                <li>AI voice intake and structured lead capture</li>
-                <li>Urgency fields and configurable junk filtering</li>
-                <li>n8n workflow orchestration</li>
-                <li>Google Sheets lead records</li>
-                <li>Discord operational alerts</li>
-                <li>Environment-based client configuration</li>
-              </ul>
-            </div>
-            <div>
-              <div class="panel-label panel-label-spaced">Tech stack</div>
-              <div class="stack-tags">
-                <span class="stack-tag">n8n</span>
-                <span class="stack-tag">Vapi</span>
-                <span class="stack-tag">JavaScript</span>
-                <span class="stack-tag">Webhooks</span>
-                <span class="stack-tag">Google Sheets</span>
-                <span class="stack-tag">Discord</span>
-                <span class="stack-tag">PowerShell</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="section fade-up" aria-labelledby="services-title">
-        <div class="section-head">
-          <div class="section-kicker">Services</div>
-          <h2 id="services-title">Systems that remove friction from your operations</h2>
-          <p>
-            Each engagement targets a specific operational problem — disconnected tools, slow response,
-            manual handoffs, or missing automation coverage.
-          </p>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="service-tag">Workflow automation</div>
-            <h3>Automation Design &amp; Reliability</h3>
-            <p>
-              Identify the manual steps costing your team time, design the workflow that eliminates them,
-              and build in the error handling that keeps it running.
-            </p>
-            <ul class="bullet-list">
-              <li>n8n workflow architecture and reliability hardening</li>
-              <li>Lead routing, notifications, syncing, and follow-up logic</li>
-              <li>Error handling, operational visibility, and recovery paths</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="service-tag">API integrations</div>
-            <h3>System Integration &amp; Data Flow</h3>
-            <p>
-              Connect the tools you already use so data moves cleanly — no duplicate entry, no broken
-              pipelines, no gaps between your CRM and the rest of your stack.
-            </p>
-            <ul class="bullet-list">
-              <li>Webhook ingestion, transformation, and routing</li>
-              <li>CRM, calendar, messaging, and database integrations</li>
-              <li>Deduplication, retries, and audit-friendly event handling</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="service-tag">AI voice &amp; chat</div>
-            <h3>AI Lead Intake &amp; Agent Systems</h3>
-            <p>
-              Build AI voice and chat agents that capture leads, qualify intent, and route to the right
-              outcome — without requiring a human to answer every inquiry.
-            </p>
-            <ul class="bullet-list">
-              <li>AI voice agents for missed calls and inbound lead response</li>
-              <li>Chat agents connected to knowledge bases, forms, and scheduling</li>
-              <li>Structured data extraction, fallback logic, and human escalation</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="service-tag">Backend systems</div>
-            <h3>FastAPI Backend Infrastructure</h3>
-            <p>
-              Lightweight backend services for integrations, validation, data shaping, and internal
-              workflow logic.
-            </p>
-            <ul class="bullet-list">
-              <li>FastAPI endpoints for workflows, integrations, and orchestration</li>
-              <li>Authentication, validation, persistence, and retry patterns</li>
-              <li>Tests, setup notes, and documented failure behavior</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="use-cases" class="section fade-up" aria-labelledby="use-cases-title">
-        <div class="section-head">
-          <div class="section-kicker">Use Cases</div>
-          <h2 id="use-cases-title">Operational problems these systems solve</h2>
-          <p>
-            The goal is not AI for its own sake — it's fixing the gaps where leads go cold,
-            manual work piles up, or disconnected tools slow everything down.
-          </p>
-        </div>
-        <div class="use-grid">
-          <article class="card">
-            <h3>Missed-call lead intake</h3>
-            <p>
-              An AI voice agent handles missed calls, collects lead details, and routes based on urgency —
-              leads captured and acted on before a competitor calls back.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Instant lead qualification</h3>
-            <p>
-              AI chat or voice agents ask the right questions, extract structured data, and deliver
-              qualified leads to your CRM or inbox with context intact.
-            </p>
-          </article>
-          <article class="card">
-            <h3>CRM and inbox synchronization</h3>
-            <p>
-              Keep contact records current across forms, email, spreadsheets, and CRM platforms
-              automatically — no duplicate entry, no stale data.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Operational alerts and exception routing</h3>
-            <p>
-              Surface failures, delays, and important workflow events to the right person so
-              automation stays visible and recoverable — not silently broken.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Custom backend for niche business rules</h3>
-            <p>
-              Build the FastAPI layer when off-the-shelf automation tools can't handle your
-              validation logic, data shaping, or multi-system coordination requirements.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Consolidated operational reporting</h3>
-            <p>
-              Pull events and outcomes from multiple systems into useful, structured reports so
-              owners can see what's working without stitching data together manually.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="stack" class="section fade-up" aria-labelledby="stack-title">
+      <section id="stack" class="section" aria-labelledby="stack-title">
         <div class="section-head">
           <div class="section-kicker">Stack</div>
           <h2 id="stack-title">Tools used in the work shown here</h2>
@@ -1497,7 +268,7 @@
             <h3>Core technologies</h3>
             <p>
               The public projects cover workflow orchestration, API services, authentication, structured
-              data handling, persistence, testing, and operational notifications.
+              data handling, persistence, testing, and alerts.
             </p>
             <div class="stack-tags" aria-label="Technology stack tags">
               <span class="stack-tag">n8n</span>
@@ -1518,7 +289,7 @@
           </div>
 
           <div class="stack-diagram" aria-label="Typical implementation approach">
-            <h3>Typical implementation pattern</h3>
+            <h3>How I usually approach a build</h3>
             <div class="flow">
               <div class="flow-step">
                 <div class="flow-index">01</div>
@@ -1544,8 +315,8 @@
               <div class="flow-step">
                 <div class="flow-index">04</div>
                 <div>
-                  <strong>Track outcomes and failures</strong>
-                  <span>Add logs, alerts, retries, and operational visibility so the system keeps working over time.</span>
+                  <strong>Make problems visible</strong>
+                  <span>Add logs, alerts, and retries so problems are visible and the workflow can recover.</span>
                 </div>
               </div>
             </div>
@@ -1553,7 +324,7 @@
         </div>
       </section>
 
-      <section id="about" class="section fade-up" aria-labelledby="about-title">
+      <section id="about" class="section" aria-labelledby="about-title">
         <div class="section-head">
           <div class="section-kicker">About</div>
           <h2 id="about-title">Practical automation, API integration, and technical operations</h2>
@@ -1565,7 +336,7 @@
               and teams that need tools connected, repetitive work reduced, or incoming data routed reliably.
             </p>
             <p>
-              I work at the implementation layer: n8n orchestration, webhooks, REST APIs, authentication,
+              I work directly with n8n workflows, webhooks, REST APIs, authentication,
               structured data handling, FastAPI services, testing, and documentation. AnsweredCall applies
               those skills to voice intake and lead routing for home-service businesses.
             </p>
@@ -1577,7 +348,7 @@
           <div class="about-points">
             <h3>What working together looks like</h3>
             <ul class="bullet-list">
-              <li>Start from a concrete operational problem, not a technology wishlist</li>
+              <li>Start from a specific business problem, not a technology wishlist</li>
               <li>Design for lead routing accuracy, response speed, and workflow consistency</li>
               <li>Keep the architecture lean, observable, and appropriate to the scope</li>
               <li>Prioritize handoff clarity and long-term maintainability over novelty</li>
@@ -1586,7 +357,7 @@
         </div>
       </section>
 
-      <section id="contact" class="section fade-up" aria-labelledby="contact-title">
+      <section id="contact" class="section" aria-labelledby="contact-title">
         <div class="section-head">
           <div class="section-kicker">Contact</div>
           <h2 id="contact-title">Need an automation built or evaluating me for a role?</h2>

@@ -14,38 +14,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#f5f2ea;--panel:#ebe7dd;--text:#1b1b19;--muted:#625f57;--line:#c3bdb1;--accent:#1d4f7a;--green:#0f6b45;--max:1180px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",system-ui,sans-serif}a{color:inherit;text-decoration:none}.shell{width:min(var(--max),calc(100% - 32px));margin:0 auto}
-    header{position:sticky;top:0;z-index:20;background:rgba(245,242,234,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--text)}.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:18px}.brand{font-family:"Sora",sans-serif;font-size:.94rem;font-weight:800;letter-spacing:-.02em}.navlinks{display:flex;gap:4px;flex-wrap:wrap}.navlinks a,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:8px 10px}.navlinks a:hover{background:var(--accent);color:#fff}
-    main{padding-bottom:72px}.hero{padding:52px 0 0}.kicker{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;border-top:1px solid var(--text);border-bottom:1px solid var(--text)}.hero-copy{padding:52px 48px 52px 0}.hero-side{padding:52px 0 52px 40px;border-left:1px solid var(--text)}h1,h2,h3,h4{font-family:"Sora",sans-serif;margin:0;letter-spacing:-.045em}h1{font-size:clamp(3rem,6vw,5.5rem);line-height:.97;max-width:11ch}.lead{font-size:1.08rem;line-height:1.7;max-width:62ch;margin:24px 0 0}.muted{color:var(--muted)}.cred{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;line-height:1.6;color:var(--muted)}
-    .price{font-family:"Sora",sans-serif;font-size:3.2rem;letter-spacing:-.06em;color:var(--accent);margin:14px 0 6px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;background:var(--accent);color:white;border:1px solid var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.button:hover{background:var(--text);border-color:var(--text)}.button.secondary{background:transparent;color:var(--text);border-color:var(--text)}.button.secondary:hover{background:var(--text);color:#fff}.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-    section{padding-top:76px}.section-head{display:grid;grid-template-columns:180px 1fr;gap:28px;padding-bottom:22px;border-bottom:1px solid var(--text)}.section-head h2{font-size:clamp(2.2rem,4.2vw,3.8rem);line-height:1.02;max-width:21ch}.section-head p{grid-column:2;max-width:66ch;line-height:1.7;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line)}.card{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.card h3{font-size:1.35rem;line-height:1.15;margin-bottom:12px}.card p{margin:0;color:var(--muted);line-height:1.65}.num{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--accent);font-size:.78rem;font-weight:800;margin-bottom:22px}ul.clean{list-style:none;padding:0;margin:0}.clean li{padding:15px 0;border-bottom:1px solid var(--line);line-height:1.55}.clean li:last-child{border-bottom:0}.check{color:var(--green);font-weight:800;margin-right:8px}
-    .split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--text)}.split>div{padding:30px}.split>div+div{border-left:1px solid var(--text)}
-    .workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--text);margin-top:26px}.step{padding:22px 16px;border-right:1px solid var(--line);min-height:150px;display:flex;flex-direction:column;justify-content:space-between}.step:last-child{border-right:0}.step .idx{font-family:ui-monospace,monospace;color:var(--accent);font-size:.75rem;font-weight:800}.step strong{font-family:"Sora",sans-serif;font-size:1rem;line-height:1.2}.arrow{color:var(--accent);font-weight:800}
-    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--text)}.proof-card{padding:30px;border-right:1px solid var(--text);display:flex;flex-direction:column;gap:18px}.proof-card:last-child{border-right:0}.proof-card h3{font-size:1.7rem;line-height:1.05}.proof-card p{margin:0;color:var(--muted);line-height:1.65}.proof-card .business{font-size:1.02rem;color:var(--text);font-weight:700}.stack{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.76rem;color:var(--accent);line-height:1.6}.proof-link{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;text-decoration:underline;text-underline-offset:4px}
-    .mini-flow{display:grid;gap:8px}.mini-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{border:1px solid var(--line);padding:7px 9px;font-family:ui-monospace,monospace;font-size:.7rem;background:#fff}.mini-arrow{color:var(--accent);font-weight:800}
-    .form-wrap{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--text)}.form-copy,.form-panel{padding:32px}.form-panel{border-left:1px solid var(--text);background:var(--panel)}form{display:grid;gap:14px}label{font-size:.82rem;font-weight:800}input,textarea,select{width:100%;font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--text);padding:13px 14px;border-radius:0}textarea{min-height:130px;resize:vertical}.field{display:grid;gap:7px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.hint{font-size:.82rem;color:var(--muted);line-height:1.5}.email-backup{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;line-height:1.6}.email-backup a{text-decoration:underline;text-underline-offset:3px}.guarantee{margin-top:26px;padding:22px;border:1px solid var(--text);background:#fff}.guarantee strong{display:block;font-family:"Sora",sans-serif;margin-bottom:6px}footer{margin-top:72px;border-top:1px solid var(--text);padding:24px 0;color:var(--muted);font-size:.86rem}
-    @media(max-width:950px){.workflow{grid-template-columns:1fr}.step{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.proof-grid{grid-template-columns:1fr}.proof-card{border-right:0;border-bottom:1px solid var(--text)}.proof-card:last-child{border-bottom:0}}
-    @media(max-width:850px){.hero-grid,.split,.form-wrap{grid-template-columns:1fr}.hero-side,.split>div+div,.form-panel{border-left:0;border-top:1px solid var(--text)}.hero-copy{padding-right:0}.hero-side{padding-left:0}.section-head{grid-template-columns:1fr}.section-head p{grid-column:1}.grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){header{position:sticky}.nav{flex-wrap:wrap}.navlinks{display:flex;width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.navlinks::-webkit-scrollbar{display:none}.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:none}.hero{padding-top:38px}.hero-copy,.hero-side{padding-top:36px;padding-bottom:36px}.grid,.two{grid-template-columns:1fr}.form-copy,.form-panel,.split>div,.card,.proof-card{padding:22px}h1{font-size:clamp(2.55rem,12vw,4rem)}}
-    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-
-    /* Human-centered professional refinement */
-    :root{--bg:#f7f4ed;--panel:#fffdf8;--text:#1c2832;--muted:#5e625f;--line:#d8d1c4;--accent:#245674;--rust:#a14f36;--green:#327052;--max:1160px}
-    header{background:rgba(247,244,237,.96);border-bottom-color:var(--line)}
-    .nav{flex-wrap:wrap}.brand{font-size:1rem}.navlinks{font-family:"Manrope",system-ui,sans-serif;font-size:.82rem;font-weight:700;text-transform:none;letter-spacing:0}.navlinks a{border-radius:6px}.navlinks a:hover{background:var(--accent)}
-    .hero{padding-top:58px}.hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:36px;border:0;align-items:center}.hero-copy{padding:30px 0}.hero-side{padding:32px;border:1px solid #cbd6db;border-radius:12px;background:#e8eef1}.kicker{font-family:"Manrope",system-ui,sans-serif;color:var(--accent);letter-spacing:.06em}.hero .kicker{color:var(--rust)}h1{max-width:13ch;font-size:clamp(2.8rem,5.2vw,4.8rem);line-height:1.01}.lead{max-width:64ch}.cred{border-top:0;padding-top:0;padding-left:15px;border-left:3px solid var(--rust)}
-    .price{font-size:2.2rem;color:var(--text);letter-spacing:-.04em}.hero-side .mono{font-family:"Manrope",system-ui,sans-serif;color:var(--accent);font-weight:800;text-transform:none;letter-spacing:0}.hero-side .clean li{border-bottom-color:#cbd6db}.hero-side .clean li:last-child{border-bottom:0}
-    .button{border-radius:7px;font-family:"Manrope",system-ui,sans-serif;font-size:.82rem;text-transform:none;letter-spacing:0}.button.secondary{border-color:#89949a}
-    section{padding-top:88px}.section-head{display:block;padding-bottom:24px;border-bottom:0}.section-head h2{margin-top:10px;max-width:25ch;font-size:clamp(1.9rem,3.4vw,3.2rem);line-height:1.08}.section-head p{margin-top:14px}
-    .grid{grid-template-columns:repeat(3,1fr);gap:16px;border:0}.card{padding:25px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.num{margin-bottom:14px;font-family:"Manrope",system-ui,sans-serif;color:var(--rust)}
-    .workflow{gap:10px;border:0}.step{min-height:140px;border:1px solid var(--line);border-radius:9px;background:var(--panel)}.step:last-child{border-right:1px solid var(--line)}
-    .proof-grid{grid-template-columns:1.2fr .9fr .9fr;gap:16px;border:0}.proof-card{padding:28px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.proof-card:last-child{border-right:1px solid var(--line)}.proof-card:first-child{background:linear-gradient(135deg,#fffdf8 0%,#eef3f4 100%);border-color:#c9d5da}.pill{border-radius:6px;background:var(--bg)}
-    .split,.form-wrap{gap:16px;border:0}.split>div,.form-copy,.form-panel{border:1px solid var(--line);border-radius:10px;background:var(--panel)}.split>div+div,.form-panel{border-left:1px solid var(--line)}.guarantee{border:0;border-left:3px solid var(--rust);background:transparent;padding:10px 0 10px 18px}
-    input,textarea,select{border-color:#89949a;border-radius:7px;background:#fff}.form-wrap{align-items:start}.form-panel{background:var(--panel)}footer{border-top-color:var(--line)}
-    @media(max-width:950px){.proof-grid{grid-template-columns:1fr}.proof-card,.proof-card:last-child{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}}
-    @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-side{max-width:680px}.split,.form-wrap{gap:14px}.hero-side,.split>div+div,.form-panel{border-left:1px solid var(--line);border-top:1px solid var(--line)}}
-    @media(max-width:600px){.hero{padding-top:34px}.hero-copy{padding-top:18px}.hero-side{padding:25px}.grid{gap:12px}.workflow{gap:10px}.step{min-height:0;border-right:1px solid var(--line)}section{padding-top:68px}.section-head h2{font-size:clamp(1.85rem,9vw,2.6rem)}}
+    :root { --bg:#f2f5f7; --surface:#ffffff; --soft-blue:#e8f0f5; --line:#d2dce3; --blue-line:#c5d4df; --text:#172532; --muted:#586775; --accent:#245f80; --accent-light:#4f86a5; --green:#327052; --radius:12px; --max:1160px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: "Manrope", system-ui, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(242,245,247,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 0; }
+    .brand { font-family: "Sora", sans-serif; font-size: 1rem; font-weight: 800; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 4px; font-size: .82rem; font-weight: 700; }
+    .navlinks a { padding: 8px 10px; border-radius: 6px; }
+    .navlinks a:hover, .navlinks a:focus-visible { background: var(--accent); color: #fff; }
+    main { padding-bottom: 72px; }
+    .hero { padding-top: 58px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(300px,.65fr); gap: 36px; align-items: center; }
+    .hero-copy { padding: 30px 0; }
+    .hero-side { padding: 32px; border: 1px solid var(--blue-line); border-radius: var(--radius); background: var(--soft-blue); }
+    h1, h2, h3 { margin: 0; font-family: "Sora", sans-serif; }
+    h1 { max-width: 13ch; font-size: clamp(2.8rem,5.2vw,4.8rem); line-height: 1.01; letter-spacing: -.05em; }
+    .kicker, .num { color: var(--accent); font-size: .74rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .hero > .kicker { color: var(--accent-light); }
+    .lead { max-width: 64ch; margin: 24px 0 0; font-size: 1.08rem; line-height: 1.7; }
+    .muted { color: var(--muted); }
+    .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 0 18px; border: 1px solid var(--accent); border-radius: 7px; background: var(--accent); color: #fff; font-size: .82rem; font-weight: 800; }
+    .button:hover, .button:focus-visible { border-color: var(--text); background: var(--text); }
+    .button.secondary { border-color: #89949a; background: transparent; color: var(--text); }
+    .button.secondary:hover, .button.secondary:focus-visible { background: var(--text); color: #fff; }
+    .cred { margin-top: 22px; padding-left: 15px; border-left: 3px solid var(--accent-light); color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .offer-label { color: var(--accent); font-size: .82rem; font-weight: 800; }
+    .price { margin: 14px 0 6px; font-family: "Sora", sans-serif; font-size: 2.2rem; font-weight: 700; letter-spacing: -.04em; }
+    ul.clean { list-style: none; margin: 0; padding: 0; }
+    .clean li { padding: 15px 0; border-bottom: 1px solid var(--line); line-height: 1.55; }
+    .clean li:last-child { border-bottom: 0; }
+    .hero-side .clean { margin-top: 22px; }
+    .hero-side .clean li { border-bottom-color: var(--blue-line); }
+    .check { margin-right: 8px; color: var(--green); font-weight: 800; }
+    section { padding-top: 88px; }
+    .section-head { padding-bottom: 24px; }
+    .section-head h2 { max-width: 25ch; margin-top: 10px; font-size: clamp(1.9rem,3.4vw,3.2rem); line-height: 1.08; letter-spacing: -.04em; }
+    .section-head p { max-width: 66ch; margin: 14px 0 0; color: var(--muted); line-height: 1.7; }
+    .grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .card, .proof-card { padding: 26px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    .card h3, .proof-card h3 { margin: 12px 0; font-size: 1.35rem; line-height: 1.2; }
+    .card p, .proof-card p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .num { margin-bottom: 14px; color: var(--accent-light); }
+    .proof-grid { display: grid; grid-template-columns: 1.2fr .9fr .9fr; gap: 16px; }
+    .proof-card { display: flex; flex-direction: column; gap: 16px; }
+    .proof-card:first-child { border-color: var(--blue-line); background: linear-gradient(135deg,#ffffff 0%,#edf3f7 100%); }
+    .proof-card .business { color: var(--text); font-size: 1rem; font-weight: 700; }
+    .mini-flow { display: grid; gap: 8px; }
+    .mini-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .pill { padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); font-size: .72rem; }
+    .mini-arrow { color: var(--accent); font-weight: 800; }
+    .stack { color: var(--accent); font-size: .78rem; font-weight: 700; line-height: 1.6; }
+    .proof-link { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: .78rem; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+    .split, .form-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .split > div, .form-copy, .form-panel { padding: 30px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    .guarantee { margin-top: 26px; padding: 10px 0 10px 18px; border-left: 3px solid var(--accent-light); line-height: 1.6; }
+    .guarantee strong { display: block; margin-bottom: 6px; }
+    .form-wrap { grid-template-columns: .85fr 1.15fr; align-items: start; }
+    .start-title { margin-top: 12px; font-size: 2rem; line-height: 1.1; }
+    .form-intro { font-size: 1rem; }
+    form { display: grid; gap: 14px; }
+    .field { display: grid; gap: 7px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { font-size: .82rem; font-weight: 800; }
+    input, textarea, select { width: 100%; padding: 13px 14px; border: 1px solid #89949a; border-radius: 7px; background: #fff; color: var(--text); font: inherit; }
+    textarea { min-height: 130px; resize: vertical; }
+    .hint { color: var(--muted); font-size: .82rem; line-height: 1.5; }
+    .honeypot { display: none; }
+    .email-backup { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); font-size: .9rem; line-height: 1.6; }
+    .email-backup a { text-decoration: underline; text-underline-offset: 3px; }
+    footer { margin-top: 72px; padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+    @media (max-width: 950px) { .proof-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 850px) { .hero-grid, .split, .form-wrap { grid-template-columns: 1fr; } .hero-side { max-width: 680px; } }
+    @media (max-width: 600px) {
+      .nav { gap: 8px; }
+      .navlinks { width: 100%; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+      .navlinks::-webkit-scrollbar { display: none; }
+      .navlinks a:nth-child(2), .navlinks a:nth-child(3) { display: none; }
+      .hero { padding-top: 34px; }
+      .hero-copy { padding-top: 18px; }
+      .hero-side { padding: 25px; }
+      h1 { font-size: clamp(2.55rem,12vw,4rem); }
+      section { padding-top: 68px; }
+      .grid, .two { grid-template-columns: 1fr; }
+      .card, .proof-card, .form-copy, .form-panel, .split > div { padding: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -58,45 +116,32 @@
         <h1 id="hero-title">Stop doing repetitive work manually.</h1>
         <p class="lead">I fix one repetitive business workflow at a time. Many tightly scoped projects can be built and tested in a focused day; I confirm the actual timing after checking access, authentication, and outside dependencies.</p>
         <div class="cta"><a class="button" href="#start">Tell me what you want fixed</a><a class="button secondary" href="#proof">See proof</a></div>
-        <div class="cred"><strong>Built by Michael Bentley.</strong> API integrations, workflow automation, n8n, Python/FastAPI, webhooks, OAuth2, and practical AI systems.</div>
+        <div class="cred"><strong>Built by Michael Bentley.</strong> API integrations, n8n workflows, Python/FastAPI services, webhooks, OAuth2, and voice intake.</div>
       </div>
       <aside class="hero-side">
-        <div class="mono">First-project offer</div><div class="price">$300 fixed scope</div>
+        <div class="offer-label">First-project offer</div><div class="price">$300 fixed scope</div>
         <p class="muted">One scoped workflow, up to three connected tools, testing, handoff, and 7 days of bug-fix support.</p>
-        <ul class="clean" style="margin-top:22px"><li><span class="check">✓</span>20–30 minute discovery</li><li><span class="check">✓</span>Scope and timing confirmed first</li><li><span class="check">✓</span>One automation built and tested</li><li><span class="check">✓</span>Simple handoff instructions</li><li><span class="check">✓</span>No useful implementation, no payment</li></ul>
+        <ul class="clean"><li><span class="check">✓</span>20–30 minute discovery</li><li><span class="check">✓</span>Scope and timing confirmed first</li><li><span class="check">✓</span>One automation built and tested</li><li><span class="check">✓</span>Simple handoff instructions</li><li><span class="check">✓</span>No useful implementation, no payment</li></ul>
       </aside>
     </div>
   </section>
 
   <section id="examples" aria-labelledby="examples-title">
-    <div class="section-head"><div class="kicker">What I fix</div><h2 id="examples-title">Small operational problems that waste time or lose leads.</h2><p>The best projects are boring, repetitive, and measurable. If someone is copying, checking, routing, reminding, or retyping the same information every day, there is usually a better way.</p></div>
+    <div class="section-head"><div class="kicker">What I fix</div><h2 id="examples-title">Small business problems that waste time or lose leads.</h2><p>The best projects are boring, repetitive, and measurable. If someone is copying, checking, routing, reminding, or retyping the same information every day, there is usually a better way.</p></div>
     <div class="grid">
       <article class="card"><div class="num">01 / Lead rescue</div><h3>New leads stop falling through the cracks</h3><p>Capture inquiries, organize details, notify the right person, and trigger follow-up automatically.</p></article>
       <article class="card"><div class="num">02 / Intake</div><h3>Forms become usable business data</h3><p>Route form or call information into Sheets, a CRM, email, or another system without manual re-entry.</p></article>
-      <article class="card"><div class="num">03 / Follow-up</div><h3>Customers get the next message on time</h3><p>Automate reminders, review requests, status updates, or internal follow-up steps.</p></article>
-      <article class="card"><div class="num">04 / Alerts</div><h3>The right person knows when something matters</h3><p>Turn important events into structured email, chat, SMS, or dashboard alerts instead of inbox hunting.</p></article>
-      <article class="card"><div class="num">05 / Admin</div><h3>Repeated office work gets removed</h3><p>Connect tools, move data, create records, generate summaries, or eliminate repetitive copy/paste work.</p></article>
-      <article class="card"><div class="num">06 / AI assist</div><h3>Unstructured information becomes actionable</h3><p>Classify, summarize, extract, route, or draft from incoming text when AI genuinely reduces human effort.</p></article>
-    </div>
-  </section>
-
-  <section aria-labelledby="visual-title">
-    <div class="section-head"><div class="kicker">What this looks like</div><h2 id="visual-title">A simple workflow can remove a surprising amount of friction.</h2><p>Most client automations are not giant systems. They are a short chain of reliable steps that move information where it needs to go and make sure someone acts on it.</p></div>
-    <div class="workflow" aria-label="Example business automation workflow">
-      <div class="step"><span class="idx">01</span><strong>Lead, form, call, or email arrives</strong><span class="arrow">→</span></div>
-      <div class="step"><span class="idx">02</span><strong>Data is captured and cleaned</strong><span class="arrow">→</span></div>
-      <div class="step"><span class="idx">03</span><strong>Rules or AI classify what matters</strong><span class="arrow">→</span></div>
-      <div class="step"><span class="idx">04</span><strong>CRM, Sheet, or business tool updates</strong><span class="arrow">→</span></div>
-      <div class="step"><span class="idx">05</span><strong>The right person gets the next action</strong><span class="check">✓</span></div>
+      <article class="card"><div class="num">03 / Alerts</div><h3>The right person knows when something matters</h3><p>Turn important events into structured email, chat, SMS, or dashboard alerts instead of inbox hunting.</p></article>
+      <article class="card"><div class="num">04 / Admin</div><h3>Repeated office work gets removed</h3><p>Connect tools, move data, create records, generate summaries, or eliminate repetitive copy/paste work.</p></article>
     </div>
   </section>
 
   <section id="proof" aria-labelledby="proof-title">
-    <div class="section-head"><div class="kicker">Proof of work</div><h2 id="proof-title">Business outcomes backed by real integration work.</h2><p>Contractor Intake AI shows the workflow behind the AnsweredCall offer. Integration Lab and OAuth Sync Lab show the reliability patterns underneath: validation, retries, authentication, duplicate protection, and recoverable synchronization.</p></div>
+    <div class="section-head"><div class="kicker">Proof of work</div><h2 id="proof-title">Three projects you can inspect.</h2><p>Contractor Intake AI shows the client-facing workflow. Integration Lab and OAuth Sync Lab show how I handle validation, authentication, retries, duplicates, and interrupted syncs.</p></div>
     <div class="proof-grid">
       <article class="proof-card">
         <div class="num">AnsweredCall / Contractor Intake AI</div><h3>Turn voice intake into a structured lead</h3>
-        <p class="business">A missed call becomes structured intake, qualification, and an immediate operational alert instead of a lost opportunity.</p>
+        <p class="business">A missed call becomes structured intake, qualification, and a team alert instead of a lost opportunity.</p>
         <div class="mini-flow"><div class="mini-row"><span class="pill">Missed call</span><span class="mini-arrow">→</span><span class="pill">AI intake</span><span class="mini-arrow">→</span><span class="pill">Lead record</span><span class="mini-arrow">→</span><span class="pill">Alert</span></div></div>
         <p>Built around voice intake, webhooks, n8n orchestration, structured data capture, and business notifications.</p>
         <div class="stack">Vapi · n8n · webhooks · Sheets · alerts</div>
@@ -104,7 +149,7 @@
       </article>
       <article class="proof-card">
         <div class="num">Integration Lab</div><h3>Reliable systems that do not process things twice</h3>
-        <p class="business">A webhook service that verifies incoming data and safely handles retries and duplicate events — useful for payments, CRMs, lead systems, and operational integrations.</p>
+        <p class="business">A webhook service that verifies incoming data and safely handles retries and duplicate events. The same pattern applies to payments, CRMs, lead systems, and other connected tools.</p>
         <div class="mini-flow"><div class="mini-row"><span class="pill">Webhook</span><span class="mini-arrow">→</span><span class="pill">Verify</span><span class="mini-arrow">→</span><span class="pill">Duplicate check</span><span class="mini-arrow">→</span><span class="pill">Store safely</span></div></div>
         <p>Includes HMAC verification, replay protection, idempotent persistence, tests, and documented failure behavior.</p>
         <div class="stack">FastAPI · HMAC · idempotency · testing</div>
@@ -122,15 +167,15 @@
   </section>
 
   <section id="process" aria-labelledby="process-title">
-    <div class="section-head"><div class="kicker">How it works</div><h2 id="process-title">Fast enough to be useful. Small enough to stay controlled.</h2><p>This is deliberately not a giant software project. We pick one bottleneck, define the before-and-after, confirm access and dependencies, build the smallest reliable automation, and test the obvious failure path.</p></div>
+    <div class="section-head"><div class="kicker">How it works</div><h2 id="process-title">A small project with a defined finish line.</h2><p>This is deliberately not a giant software project. We pick one bottleneck, define the before-and-after, confirm access and dependencies, build the smallest reliable automation, and test the obvious failure path.</p></div>
     <div class="split"><div><ul class="clean"><li><strong>1. Diagnose.</strong><br><span class="muted">A short call identifies the manual step, tools involved, and desired outcome.</span></li><li><strong>2. Scope.</strong><br><span class="muted">We agree on one workflow and what “done” means before work starts.</span></li><li><strong>3. Build.</strong><br><span class="muted">I connect the tools, add the logic, and handle obvious failure cases.</span></li><li><strong>4. Test + hand off.</strong><br><span class="muted">You see the workflow run, receive simple instructions, and get 7 days of bug-fix support.</span></li></ul></div><div><div class="kicker">Good fit</div><ul class="clean"><li><strong>One repetitive workflow</strong><br><span class="muted">Forms, email, Sheets, CRMs, webhooks, APIs, notifications, or AI processing.</span></li><li><strong>Up to three connected tools</strong><br><span class="muted">Enough to solve a real problem without turning this into a platform migration.</span></li><li><strong>Not included</strong><br><span class="muted">Full websites, custom SaaS platforms, enterprise migrations, unlimited revisions, or open-ended support.</span></li></ul></div></div>
-    <div class="guarantee"><strong>Low-risk guarantee</strong><span>If I cannot identify and implement a useful automation for the agreed workflow, you do not pay. Revenue or business outcomes are never guaranteed — the deliverable is a working, scoped automation.</span></div>
+    <div class="guarantee"><strong>Low-risk guarantee</strong><span>If I cannot identify and implement a useful automation for the agreed workflow, you do not pay. I do not guarantee revenue or business results. The deliverable is a working, scoped automation.</span></div>
   </section>
 
   <section id="start" aria-labelledby="start-title">
     <div class="section-head"><div class="kicker">Start here</div><h2 id="start-title">Tell me the thing your business keeps doing manually.</h2><p>You do not need to know what automation tool you need. Describe the repetitive task, what happens now, and what you wish happened instead.</p></div>
-    <div class="form-wrap"><div class="form-copy"><div class="kicker">Fixed-Scope Automation Fix</div><h3 style="font-size:2rem;line-height:1.05">I’ll confirm the scope, price, and realistic turnaround.</h3><p class="lead muted" style="font-size:1rem">If it fits, we agree on the workflow and outcome before any work starts. If it is larger or depends on outside approvals, I will tell you instead of forcing it into the wrong package.</p><div class="email-backup">Prefer email? <a href="mailto:mnbentley@outlook.com?subject=Fixed-Scope%20Business%20Automation%20Fix">mnbentley@outlook.com</a></div></div>
-      <div class="form-panel"><form action="https://formsubmit.co/mnbentley@outlook.com" method="POST"><input type="hidden" name="_subject" value="New Fixed-Scope Automation lead" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://bentley-michael.github.io/automation-fix/thanks.html" /><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+    <div class="form-wrap"><div class="form-copy"><div class="kicker">Fixed-Scope Automation Fix</div><h3 class="start-title">I’ll confirm the scope, price, and realistic turnaround.</h3><p class="lead muted form-intro">If it fits, we agree on the workflow and outcome before any work starts. If it is larger or depends on outside approvals, I will tell you instead of forcing it into the wrong package.</p><div class="email-backup">Prefer email? <a href="mailto:mnbentley@outlook.com?subject=Fixed-Scope%20Business%20Automation%20Fix">mnbentley@outlook.com</a></div></div>
+      <div class="form-panel"><form action="https://formsubmit.co/mnbentley@outlook.com" method="POST"><input type="hidden" name="_subject" value="New Fixed-Scope Automation lead" /><input type="hidden" name="_template" value="table" /><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_next" value="https://bentley-michael.github.io/automation-fix/thanks.html" /><input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" />
         <div class="two"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div><div class="field"><label for="business">Business</label><input id="business" name="business" autocomplete="organization" /></div></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
         <div class="field"><label for="problem">What repetitive task do you want fixed?</label><textarea id="problem" name="problem" required></textarea><div class="hint">Example: “Every new website lead gets copied into a spreadsheet, then someone emails the sales manager.”</div></div>
