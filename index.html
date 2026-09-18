@@ -3,396 +3,228 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Bentley | Automation &amp; API Integration Specialist</title>
-  <meta
-    name="description"
-    content="Michael Bentley builds practical n8n workflows, webhook services, and FastAPI integrations for small businesses and technical teams."
-  />
+  <title>Michael Bentley | Automation &amp; API Integration</title>
+  <meta name="description" content="Michael Bentley builds n8n automations, webhook services, and API integrations that capture leads, connect tools, and reduce manual work." />
   <link rel="canonical" href="https://bentley-michael.github.io/" />
-  <meta property="og:title" content="Michael Bentley | Automation &amp; API Integration Specialist" />
-  <meta property="og:description" content="Practical n8n workflows, webhook services, and FastAPI integrations, with public project proof." />
+  <meta property="og:title" content="Michael Bentley | Automation &amp; API Integration" />
+  <meta property="og:description" content="Practical workflow automation and API integration, backed by public code and tested projects." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bentley-michael.github.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f2f5f7;
-      --surface: #ffffff;
-      --soft-blue: #e8f0f5;
-      --line: #d2dce3;
-      --blue-line: #c5d4df;
-      --text: #172532;
-      --muted: #586775;
-      --accent: #245f80;
-      --accent-light: #4f86a5;
-      --radius: 12px;
-      --max: 1180px;
+      --bg: #f2f5f7; --surface: #fff; --soft-blue: #e8f0f5; --line: #d2dce3;
+      --blue-line: #b8ccd8; --text: #172532; --muted: #586775; --accent: #245f80;
+      --accent-light: #4f86a5; --dark: #1f3544; --radius: 12px; --max: 1160px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: "Manrope", system-ui, sans-serif; }
+    body { margin: 0; min-width: 320px; overflow-x: hidden; background: var(--bg); color: var(--text); font-family: "Manrope", system-ui, sans-serif; }
     a { color: inherit; text-decoration: none; }
-    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-
-    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(242, 245, 247, .96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-    .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(242,245,247,.96); backdrop-filter: blur(10px); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 64px; }
     .brand { display: inline-flex; align-items: center; gap: 10px; font-family: "Sora", sans-serif; font-size: .94rem; font-weight: 800; letter-spacing: -.02em; }
     .brand-mark { width: 9px; height: 9px; border-radius: 50%; background: var(--accent-light); }
-    .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; font-size: .84rem; font-weight: 700; }
+    .nav { display: flex; align-items: center; gap: 4px; font-size: .82rem; font-weight: 700; }
     .nav a { padding: 8px 10px; border-radius: 6px; }
     .nav a:hover, .nav a:focus-visible { background: var(--accent); color: #fff; }
-
-    main { padding-bottom: 84px; }
-    .hero { padding-top: 58px; }
-    .eyebrow, .section-kicker, .service-tag, .panel-label { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 36px; align-items: center; }
-    .hero-copy { padding: 34px 0 20px; }
+    main { padding-bottom: 76px; }
+    .hero { padding: 72px 0 66px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(270px,.55fr); gap: 64px; align-items: end; }
+    .eyebrow, .section-kicker, .service-tag, .proof-label { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
     h1, h2, h3 { margin: 0; font-family: "Sora", "Manrope", system-ui, sans-serif; }
-    h1 { max-width: 13ch; font-size: clamp(2.8rem, 5.2vw, 4.9rem); line-height: 1.01; letter-spacing: -.05em; }
-    .hero-copy p { max-width: 61ch; margin: 24px 0 0; font-size: 1.05rem; line-height: 1.65; }
-    .hero-subtext { color: var(--muted); }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-    .button, .button-secondary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 7px; font-size: .82rem; font-weight: 800; }
+    h1 { max-width: 12ch; margin-top: 18px; font-size: clamp(3rem,6vw,5.25rem); line-height: .99; letter-spacing: -.055em; }
+    .hero-lead { max-width: 62ch; margin: 24px 0 0; color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .button, .button-secondary { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 0 17px; border-radius: 7px; font-size: .82rem; font-weight: 800; }
     .button { border: 1px solid var(--accent); background: var(--accent); color: #fff; }
-    .button-secondary { border: 1px solid #89949a; background: transparent; color: var(--text); }
+    .button-secondary { border: 1px solid #87949c; background: transparent; color: var(--text); }
     .button:hover, .button:focus-visible { border-color: var(--text); background: var(--text); }
     .button-secondary:hover, .button-secondary:focus-visible { background: var(--text); color: #fff; }
-    .human-note { max-width: 62ch; margin-top: 26px; padding-left: 16px; border-left: 3px solid var(--accent-light); color: var(--muted); font-size: .95rem; line-height: 1.65; }
-    .human-note strong { color: var(--text); }
-
-    .hero-panel { padding: 34px; border: 1px solid var(--blue-line); border-radius: var(--radius); background: var(--soft-blue); }
-    .panel-top h2 { max-width: 18ch; margin-top: 14px; font-size: 1.55rem; line-height: 1.2; }
-    .status-pill { display: block; margin-top: 10px; color: var(--muted); font-size: .78rem; font-weight: 700; }
-    .panel-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--blue-line); }
-    .panel-list li { padding: 15px 0; border-bottom: 1px solid var(--blue-line); }
-    .panel-list li:last-child { padding-bottom: 0; border-bottom: 0; }
-    .panel-list strong, .panel-list span { display: block; }
-    .panel-list span { margin-top: 4px; color: var(--muted); font-size: .92rem; line-height: 1.55; }
-
-    .section { padding-top: 88px; }
-    .section-head { padding-bottom: 24px; }
-    .section-head h2 { max-width: 25ch; margin-top: 10px; font-size: clamp(1.9rem, 3.4vw, 3.2rem); line-height: 1.08; letter-spacing: -.04em; }
-    .section-head p { max-width: 65ch; margin: 14px 0 0; color: var(--muted); line-height: 1.7; }
-
-    .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-    .card h3 { margin-top: 12px; font-size: 1.45rem; line-height: 1.2; }
-    .card p { color: var(--muted); line-height: 1.65; }
-    .bullet-list { list-style: none; margin: 20px 0 0; padding: 0; }
-    .bullet-list li { position: relative; padding: 8px 0 8px 16px; line-height: 1.55; }
-    .bullet-list li::before { content: ""; position: absolute; top: 17px; left: 0; width: 6px; height: 6px; background: var(--accent); }
-    .project-featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: 42px; padding: 38px; border-color: var(--blue-line); background: linear-gradient(135deg, #ffffff 0%, #edf3f7 100%); }
-    .project-featured h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
-    .project-flow { align-self: center; padding: 24px; border-radius: 8px; background: #1f3544; color: #fff; }
-    .project-flow-title { margin-bottom: 18px; font-weight: 800; }
-    .project-flow-step { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding: 12px 0; }
+    .hero-proof { padding: 22px 0 4px 24px; border-left: 2px solid var(--blue-line); }
+    .hero-proof p { margin: 10px 0 0; color: var(--muted); font-size: .93rem; line-height: 1.6; }
+    .hero-proof strong { color: var(--text); }
+    .proof-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; font-size: .78rem; font-weight: 800; }
+    .proof-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+    .section { padding-top: 86px; }
+    .section-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.55fr); gap: 42px; align-items: end; padding-bottom: 26px; }
+    .section-head h2 { max-width: 24ch; margin-top: 10px; font-size: clamp(2rem,3.6vw,3.25rem); line-height: 1.07; letter-spacing: -.045em; }
+    .section-head p { max-width: 54ch; margin: 0; color: var(--muted); line-height: 1.65; }
+    .project-featured { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(320px,.92fr); gap: 44px; padding: 40px; border: 1px solid var(--blue-line); border-radius: var(--radius); background: var(--surface); }
+    .project-featured h3 { max-width: 18ch; margin-top: 12px; font-size: clamp(1.9rem,3.2vw,2.7rem); line-height: 1.08; letter-spacing: -.035em; }
+    .project-summary { max-width: 58ch; margin: 18px 0 0; color: var(--muted); line-height: 1.65; }
+    .evidence-list { display: grid; gap: 10px; margin: 24px 0 0; }
+    .evidence-row { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding-top: 10px; border-top: 1px solid var(--line); line-height: 1.5; }
+    .evidence-row strong { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+    .evidence-row span { color: var(--muted); font-size: .92rem; }
+    .project-flow { align-self: stretch; padding: 25px; border-radius: 9px; background: var(--dark); color: #fff; }
+    .project-flow-title { margin-bottom: 16px; font-weight: 800; }
+    .project-flow-step { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 14px 0; }
     .project-flow-step + .project-flow-step { border-top: 1px solid rgba(255,255,255,.16); }
     .project-flow-step > span { color: #8cc2df; font-weight: 800; }
-    .project-flow-step small { display: block; margin-top: 3px; color: #c8d2d8; line-height: 1.45; }
-
-    .stack-grid, .about-grid, .contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-    .stack-diagram h3, .about-points h3 { font-size: 1.25rem; }
-    .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-    .stack-tag { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: #edf2f5; font-size: .78rem; font-weight: 700; }
-    .flow { margin-top: 18px; }
-    .flow-step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .flow-step:last-child { border-bottom: 0; }
-    .flow-index { display: grid; width: 28px; height: 28px; place-items: center; background: var(--accent); color: #fff; font-size: .72rem; font-weight: 800; }
-    .flow-step strong, .flow-step span { display: block; }
-    .flow-step span { margin-top: 4px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
-    .about-copy p, .contact-copy p { margin-top: 0; color: var(--muted); line-height: 1.7; }
-    .contact-list { list-style: none; margin: 0; background: var(--accent); color: #fff; }
-    .contact-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.35); line-height: 1.55; }
-    .contact-list li:last-child { border-bottom: 0; }
-    .contact-accent-link { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-    footer { padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
-
+    .project-flow-step small { display: block; margin-top: 4px; color: #c8d2d8; line-height: 1.45; }
+    .proof-note { margin-top: 18px; color: #c8d2d8; font-size: .76rem; line-height: 1.55; }
+    .proof-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 16px; }
+    .proof-card { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: start; padding: 25px 27px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    .proof-card h3 { margin-top: 8px; font-size: 1.25rem; }
+    .proof-card p { max-width: 48ch; margin: 10px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .text-link { color: var(--accent); font-size: .8rem; font-weight: 800; white-space: nowrap; text-decoration: underline; text-underline-offset: 4px; }
+    .stack-band { display: grid; grid-template-columns: 240px 1fr; gap: 36px; align-items: center; padding: 30px 34px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stack-band h2 { margin-top: 8px; font-size: 1.45rem; line-height: 1.2; }
+    .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack-tag { padding: 8px 11px; border: 1px solid var(--blue-line); border-radius: 999px; background: var(--soft-blue); font-size: .78rem; font-weight: 700; }
+    .about-block { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(270px,.75fr); gap: 64px; align-items: start; padding: 42px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about-block h2 { max-width: 18ch; margin-top: 10px; font-size: clamp(1.9rem,3.3vw,2.8rem); line-height: 1.1; letter-spacing: -.04em; }
+    .about-copy { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+    .about-copy strong { color: var(--text); }
+    .contact-card { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); gap: 46px; align-items: center; padding: 42px; border-radius: var(--radius); background: var(--accent); color: #fff; }
+    .contact-card h2 { max-width: 18ch; margin-top: 10px; font-size: clamp(2rem,4vw,3.35rem); line-height: 1.06; letter-spacing: -.045em; }
+    .contact-card p { max-width: 54ch; margin: 18px 0 0; color: #deebf2; line-height: 1.65; }
+    .contact-card .section-kicker { color: #b9d7e7; }
+    .contact-card .button { border-color: #fff; background: #fff; color: var(--accent); }
+    .contact-card .button:hover, .contact-card .button:focus-visible { border-color: var(--dark); background: var(--dark); color: #fff; }
+    .contact-card .button-secondary { border-color: #b9d7e7; color: #fff; }
+    .contact-card .button-secondary:hover, .contact-card .button-secondary:focus-visible { border-color: #fff; background: #fff; color: var(--accent); }
+    .contact-details { margin: 0; padding: 0; list-style: none; }
+    .contact-details li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.25); font-size: .9rem; line-height: 1.5; }
+    .contact-details li:last-child { border-bottom: 0; }
+    .contact-details a { text-decoration: underline; text-underline-offset: 4px; }
+    footer { padding: 24px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .84rem; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
-
-    @media (max-width: 900px) {
-      .hero-grid, .project-featured { grid-template-columns: 1fr; }
-      .hero-panel { max-width: 680px; }
+    @media (max-width: 960px) {
+      .hero-grid { gap: 38px; }
+      .project-featured { grid-template-columns: 1fr; }
+      .project-flow { max-width: 680px; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; }
+      .section-head p { max-width: 62ch; }
     }
-    @media (max-width: 719px) {
-      .header-inner { gap: 8px; }
-      .nav { width: 100%; justify-content: flex-start; overflow-x: auto; padding: 4px 0 2px; white-space: nowrap; scrollbar-width: none; }
+    @media (max-width: 760px) {
+      .shell { width: min(var(--max), calc(100% - 32px)); }
+      .header-inner { flex-wrap: wrap; gap: 4px; padding: 12px 0 8px; }
+      .nav { width: 100%; overflow-x: auto; padding-bottom: 4px; white-space: nowrap; scrollbar-width: none; }
       .nav::-webkit-scrollbar { display: none; }
-      .nav a:nth-child(3), .nav a:nth-child(4), .nav a:nth-child(6) { display: none; }
-      .hero { padding-top: 34px; }
-      .hero-copy { padding-top: 20px; }
-      .hero-panel { padding: 26px; }
-      h1 { font-size: clamp(2.55rem, 12.5vw, 4rem); }
+      .nav a:nth-child(3), .nav a:nth-child(4) { display: none; }
+      .hero { padding: 48px 0 54px; }
+      .hero-grid, .about-block, .contact-card { grid-template-columns: 1fr; }
+      .hero-grid { gap: 34px; }
+      h1 { font-size: clamp(2.7rem,12.5vw,4rem); }
+      .hero-proof { max-width: 560px; }
       .section { padding-top: 68px; }
-      .card-grid, .stack-grid, .about-grid, .contact-card { grid-template-columns: 1fr; }
-      .project-featured { grid-column: auto; gap: 28px; padding: 26px; }
-      .card, .stack-diagram, .about-copy, .about-points, .contact-copy, .contact-list { padding: 26px; }
+      .project-featured { gap: 28px; padding: 27px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-card { padding: 23px; }
+      .stack-band { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+      .about-block { gap: 24px; padding: 34px 0; }
+      .contact-card { gap: 26px; padding: 28px; }
+    }
+    @media (max-width: 420px) {
+      .hero { padding-top: 40px; }
+      .hero-lead { font-size: 1rem; }
+      .hero .cta-row .button, .hero .cta-row .button-secondary { flex: 1 1 100%; }
+      .project-featured { padding: 23px; }
       .project-flow { padding: 20px; }
+      .evidence-row { grid-template-columns: 1fr; gap: 3px; }
+      .proof-card { grid-template-columns: 1fr; gap: 14px; }
+      .text-link { justify-self: start; }
+      .contact-card { padding: 24px; }
+      .contact-card .cta-row .button, .contact-card .cta-row .button-secondary { width: 100%; }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="Michael Bentley home">
-        <span class="brand-mark"></span>
-        <span>Michael Bentley</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="/automation-fix/">Work with me</a>
-        <a href="#stack">Stack</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="brand" href="#top" aria-label="Michael Bentley home"><span class="brand-mark" aria-hidden="true"></span><span>Michael Bentley</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Work</a><a href="/automation-fix/">Hire me</a><a href="#stack">Stack</a><a href="#about">About</a><a href="#contact">Contact</a><a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </div>
   </header>
-
   <main id="top">
     <div class="shell">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="eyebrow">Automation &amp; API integration specialist</div>
         <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 id="hero-title">I connect the tools your work depends on.</h1>
-            <p>
-              I build practical n8n workflows, webhook services, and FastAPI integrations that move data
-              between tools, route leads, and make failures easier to see and recover from.
-            </p>
-            <p class="hero-subtext">
-              Available for focused freelance automations and technical roles involving APIs, workflow
-              implementation, troubleshooting, and documentation.
-            </p>
-            <div class="cta-row">
-              <a class="button" href="/automation-fix/">Discuss an automation</a>
-              <a class="button-secondary" href="#projects">View projects</a>
-            </div>
-            <div class="human-note"><strong>I’m Michael, based in Nashville.</strong> I focus on the unglamorous work that matters: moving information cleanly, making failures visible, and leaving behind documentation another person can use.</div>
+          <div>
+            <div class="eyebrow">Automation &amp; API integration</div>
+            <h1 id="hero-title">I connect business tools and remove manual work.</h1>
+            <p class="hero-lead">I build n8n workflows, webhook services, and API integrations that capture leads, move data reliably, and make failures visible.</p>
+            <div class="cta-row"><a class="button" href="/automation-fix/">Discuss an automation</a><a class="button-secondary" href="#projects">See the work</a></div>
           </div>
-
-          <aside class="hero-panel" aria-label="Typical engagements">
-            <div class="panel-top">
-              <div>
-                <div class="panel-label">What I build</div>
-                <h2>Useful automation with a clear handoff</h2>
-              </div>
-              <div class="status-pill">Nashville, TN<br />Open to remote</div>
-            </div>
-            <ul class="panel-list">
-              <li>
-                <strong>Connect tools and APIs</strong>
-                <span>Move data between forms, CRMs, spreadsheets, inboxes, and business systems.</span>
-              </li>
-              <li>
-                <strong>Automate repetitive steps</strong>
-                <span>Route leads, create records, trigger alerts, and reduce copy-and-paste work.</span>
-              </li>
-              <li>
-                <strong>Plan for failure</strong>
-                <span>Add validation, retries, duplicate protection, logging, and straightforward documentation.</span>
-              </li>
-            </ul>
+          <aside class="hero-proof" aria-label="Availability and proof">
+            <div class="proof-label">Available for focused builds</div>
+            <p><strong>Nashville-based, remote-ready.</strong> Best fit: lead intake, tool-to-tool data flow, alerts, webhooks, and small API connections.</p>
+            <div class="proof-links"><a href="#projects">Public code + tests</a><a href="mailto:mnbentley@outlook.com">Email Michael</a></div>
           </aside>
         </div>
       </section>
-
       <section id="projects" class="section" aria-labelledby="projects-title">
         <div class="section-head">
-          <div class="section-kicker">Selected work</div>
-          <h2 id="projects-title">Selected automation and integration work</h2>
-          <p>A business-facing case study and two technical projects with public code, tests, and implementation notes.</p>
+          <div><div class="section-kicker">Selected work</div><h2 id="projects-title">Proof in working systems, not promises.</h2></div>
+          <p>One business workflow and two public backend projects show how I handle intake, authentication, duplicates, retries, and handoff.</p>
         </div>
-        <div class="card-grid">
-          <article class="card project-featured">
-            <div>
-            <div class="service-tag">Featured build · Vapi · n8n</div>
+        <article class="project-featured">
+          <div>
+            <div class="service-tag">Featured case study · Vapi · n8n</div>
             <h3>Contractor Intake AI</h3>
-            <p>A voice-intake workflow that turns a contractor’s missed call into a structured lead and a team alert.</p>
-            <ul class="bullet-list">
-              <li><strong>Problem:</strong> missed calls and inconsistent intake can cost home-service businesses leads</li>
-              <li><strong>Build:</strong> Vapi voice intake → webhook → n8n → Google Sheets and Discord</li>
-              <li><strong>Proof:</strong> architecture decisions, data contract, and a sanitized example event</li>
-            </ul>
-            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">View case study</a></div>
+            <p class="project-summary">A missed-call workflow that collects a contractor lead, turns the conversation into structured data, and alerts the team.</p>
+            <div class="evidence-list" aria-label="Project evidence">
+              <div class="evidence-row"><strong>Problem</strong><span>Missed calls and inconsistent intake can leave home-service leads unanswered.</span></div>
+              <div class="evidence-row"><strong>System</strong><span>Voice intake → webhook → n8n → Google Sheets + Discord.</span></div>
+              <div class="evidence-row"><strong>Evidence</strong><span>Sanitized data contract, example event, architecture notes, and public repository.</span></div>
             </div>
-            <div class="project-flow" aria-label="Contractor Intake AI workflow">
-              <div class="project-flow-title">From missed call to actionable lead</div>
-              <div class="project-flow-step"><span>01</span><div><strong>Voice intake</strong><small>Collect contact, service, location, and urgency.</small></div></div>
-              <div class="project-flow-step"><span>02</span><div><strong>Structure and filter</strong><small>Normalize the payload and separate useful leads from junk.</small></div></div>
-              <div class="project-flow-step"><span>03</span><div><strong>Record and alert</strong><small>Write the lead to Sheets and notify the team in Discord.</small></div></div>
-            </div>
+            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/contractor-intake-ai" target="_blank" rel="noreferrer">Inspect the case study</a></div>
+          </div>
+          <div class="project-flow" aria-label="Contractor Intake AI workflow">
+            <div class="project-flow-title">Missed call → actionable lead</div>
+            <div class="project-flow-step"><span>01</span><div><strong>Collect</strong><small>Contact, service, location, and urgency.</small></div></div>
+            <div class="project-flow-step"><span>02</span><div><strong>Structure</strong><small>Normalize the payload and filter unusable events.</small></div></div>
+            <div class="project-flow-step"><span>03</span><div><strong>Route</strong><small>Record the lead and alert the operating team.</small></div></div>
+            <div class="proof-note">The public case study is sanitized; private production credentials and workflow internals are not published.</div>
+          </div>
+        </article>
+        <div class="proof-grid">
+          <article class="proof-card">
+            <div><div class="service-tag">FastAPI · Webhooks</div><h3>Integration Lab</h3><p>HMAC validation, duplicate protection, safe retries, tests, and documented failure behavior.</p></div>
+            <a class="text-link" href="https://github.com/bentley-michael/integration-lab" target="_blank" rel="noreferrer">View code</a>
           </article>
-          <article class="card">
-            <div class="service-tag">FastAPI · Webhooks</div>
-            <h3>Integration Lab</h3>
-            <p>A webhook service designed to handle retried and duplicated events safely.</p>
-            <ul class="bullet-list">
-              <li>HMAC signature validation</li>
-              <li>Idempotency and replay protection</li>
-              <li>Tests, Docker setup, and documented failure behavior</li>
-            </ul>
-            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/integration-lab" target="_blank" rel="noreferrer">View repository</a></div>
-          </article>
-          <article class="card">
-            <div class="service-tag">FastAPI · OAuth2</div>
-            <h3>OAuth Sync Lab</h3>
-            <p>An OAuth2 integration and sync engine built around token lifecycle and recoverable failures.</p>
-            <ul class="bullet-list">
-              <li>Authorization-code and refresh-token handling</li>
-              <li>Rate-limit retries, pagination, and checkpoints</li>
-              <li>Tests, setup guide, and architecture notes</li>
-            </ul>
-            <div class="cta-row"><a class="button-secondary" href="https://github.com/bentley-michael/oauth-sync-lab" target="_blank" rel="noreferrer">View repository</a></div>
+          <article class="proof-card">
+            <div><div class="service-tag">FastAPI · OAuth2</div><h3>OAuth Sync Lab</h3><p>Token refresh, pagination, rate-limit handling, checkpoints, tests, and setup notes.</p></div>
+            <a class="text-link" href="https://github.com/bentley-michael/oauth-sync-lab" target="_blank" rel="noreferrer">View code</a>
           </article>
         </div>
       </section>
-
       <section id="stack" class="section" aria-labelledby="stack-title">
-        <div class="section-head">
-          <div class="section-kicker">Stack</div>
-          <h2 id="stack-title">Tools used in the work shown here</h2>
-          <p>
-            The stack stays small and changes with the problem. These tools appear in the public projects
-            and working automation examples on this site.
-          </p>
-        </div>
-        <div class="stack-grid">
-          <div class="card">
-            <h3>Core technologies</h3>
-            <p>
-              The public projects cover workflow orchestration, API services, authentication, structured
-              data handling, persistence, testing, and alerts.
-            </p>
-            <div class="stack-tags" aria-label="Technology stack tags">
-              <span class="stack-tag">n8n</span>
-              <span class="stack-tag">FastAPI</span>
-              <span class="stack-tag">Python</span>
-              <span class="stack-tag">JavaScript</span>
-              <span class="stack-tag">OAuth2</span>
-              <span class="stack-tag">JSON / YAML</span>
-              <span class="stack-tag">Vapi</span>
-              <span class="stack-tag">Google Sheets</span>
-              <span class="stack-tag">Discord</span>
-              <span class="stack-tag">SQLite / SQLAlchemy</span>
-              <span class="stack-tag">Webhooks</span>
-              <span class="stack-tag">REST APIs</span>
-              <span class="stack-tag">GitHub Actions</span>
-              <span class="stack-tag">Docker</span>
-            </div>
-          </div>
-
-          <div class="stack-diagram" aria-label="Typical implementation approach">
-            <h3>How I usually approach a build</h3>
-            <div class="flow">
-              <div class="flow-step">
-                <div class="flow-index">01</div>
-                <div>
-                  <strong>Capture the event</strong>
-                  <span>Start from a form submission, inbound call, email, webhook, or scheduled process.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">02</div>
-                <div>
-                  <strong>Apply logic and AI where it helps</strong>
-                  <span>Validate payloads, enrich records, classify intent, summarize context, or qualify the request.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">03</div>
-                <div>
-                  <strong>Route to the right systems</strong>
-                  <span>Send results into CRMs, inboxes, Slack, calendars, databases, or agent workflows.</span>
-                </div>
-              </div>
-              <div class="flow-step">
-                <div class="flow-index">04</div>
-                <div>
-                  <strong>Make problems visible</strong>
-                  <span>Add logs, alerts, and retries so problems are visible and the workflow can recover.</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="stack-band">
+          <div><div class="section-kicker">Working stack</div><h2 id="stack-title">Tools used in the projects above</h2></div>
+          <div class="stack-tags" aria-label="Technology stack"><span class="stack-tag">n8n</span><span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span><span class="stack-tag">REST APIs</span><span class="stack-tag">Webhooks</span><span class="stack-tag">OAuth2</span><span class="stack-tag">SQL</span><span class="stack-tag">Docker</span><span class="stack-tag">GitHub Actions</span><span class="stack-tag">Vapi</span></div>
         </div>
       </section>
-
       <section id="about" class="section" aria-labelledby="about-title">
-        <div class="section-head">
-          <div class="section-kicker">About</div>
-          <h2 id="about-title">Practical automation, API integration, and technical operations</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>
-              I'm Michael Bentley. I build practical automations and API integrations for small businesses
-              and teams that need tools connected, repetitive work reduced, or incoming data routed reliably.
-            </p>
-            <p>
-              I work directly with n8n workflows, webhooks, REST APIs, authentication,
-              structured data handling, FastAPI services, testing, and documentation. AnsweredCall applies
-              those skills to voice intake and lead routing for home-service businesses.
-            </p>
-            <p>
-              My approach is direct: identify the bottleneck, design the flow, build what matters, and
-              deliver a system that is understandable, testable, and straightforward to hand off.
-            </p>
-          </div>
-          <div class="about-points">
-            <h3>What working together looks like</h3>
-            <ul class="bullet-list">
-              <li>Start from a specific business problem, not a technology wishlist</li>
-              <li>Design for lead routing accuracy, response speed, and workflow consistency</li>
-              <li>Keep the architecture lean, observable, and appropriate to the scope</li>
-              <li>Prioritize handoff clarity and long-term maintainability over novelty</li>
-            </ul>
-          </div>
+        <div class="about-block">
+          <div><div class="section-kicker">About</div><h2 id="about-title">Direct, documented, and built for handoff.</h2></div>
+          <p class="about-copy"><strong>I’m Michael Bentley.</strong> I build focused automations for small businesses and technical teams: define the bottleneck, connect the right systems, test the failure path, and leave clear documentation behind.</p>
         </div>
       </section>
-
       <section id="contact" class="section" aria-labelledby="contact-title">
-        <div class="section-head">
-          <div class="section-kicker">Contact</div>
-          <h2 id="contact-title">Need an automation built or evaluating me for a role?</h2>
-        </div>
         <div class="contact-card">
-          <div class="contact-copy">
-            <p>
-              I’m available for focused automation projects and for API integration, workflow automation,
-              and technical operations roles where troubleshooting and clear documentation matter.
-            </p>
-            <div class="cta-row">
-              <a class="button" href="/automation-fix/#start">Discuss an automation</a>
-              <a class="button-secondary" href="mailto:mnbentley@outlook.com?subject=Discuss%20a%20role%20with%20Michael%20Bentley">Discuss a role</a>
-            </div>
+          <div>
+            <div class="section-kicker">Start a conversation</div><h2 id="contact-title">Have a workflow that keeps wasting time?</h2>
+            <p>Show me the manual step and the tools involved. I’ll tell you whether it fits a focused automation project.</p>
+            <div class="cta-row"><a class="button" href="/automation-fix/#start">Describe the workflow</a><a class="button-secondary" href="mailto:mnbentley@outlook.com?subject=Discuss%20a%20role%20with%20Michael%20Bentley">Discuss a role</a></div>
           </div>
-          <ul class="contact-list" aria-label="Engagement details">
-            <li><strong>Good fit:</strong> service businesses losing leads to slow follow-up, running disconnected tools, or doing work that should be automated.</li>
-            <li><strong>Role fit:</strong> API integration, workflow implementation, technical operations, troubleshooting, and documentation.</li>
-            <li><strong>Email:</strong> <a href="mailto:mnbentley@outlook.com" class="contact-accent-link">mnbentley@outlook.com</a></li>
-            <li><strong>GitHub proof:</strong> <a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer" class="contact-accent-link">github.com/bentley-michael</a> includes code, tests, setup notes, and architecture decisions.</li>
+          <ul class="contact-details" aria-label="Contact details">
+            <li><strong>Email</strong><br /><a href="mailto:mnbentley@outlook.com">mnbentley@outlook.com</a></li>
+            <li><strong>Location</strong><br />Nashville, Tennessee · Remote projects welcome</li>
+            <li><strong>Technical proof</strong><br /><a href="https://github.com/bentley-michael" target="_blank" rel="noreferrer">GitHub repositories, tests, and setup notes</a></li>
           </ul>
         </div>
       </section>
     </div>
   </main>
-
-  <footer>
-    <div class="shell">
-      <div>© <span id="year"></span> Michael Bentley. Automation and API integration.</div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-  </script>
+  <footer><div class="shell">© <span id="year"></span> Michael Bentley · Automation &amp; API integration</div></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
