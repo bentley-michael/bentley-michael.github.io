@@ -32,6 +32,9 @@
     .nav a { padding: 8px 10px; border-radius: 6px; }
     .nav a:hover, .nav a:focus-visible { background: var(--accent); color: #fff; }
     main { padding-bottom: 76px; }
+    .audit-banner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 22px 26px; border: 1px solid var(--blue-line); border-radius: var(--radius); background: var(--soft-blue); }
+    .audit-banner h2 { margin: 6px 0 7px; font-size: clamp(1.25rem,2.3vw,1.65rem); }
+    .audit-banner p { max-width: 65ch; margin: 0; color: var(--muted); font-size: .91rem; line-height: 1.55; }
     .hero { padding: 72px 0 66px; }
     .hero-grid { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(270px,.55fr); gap: 64px; align-items: end; }
     .eyebrow, .section-kicker, .service-tag, .proof-label { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .075em; text-transform: uppercase; }
@@ -160,6 +163,14 @@
           </aside>
         </div>
       </section>
+      <aside class="audit-banner" aria-labelledby="audit-banner-title">
+        <div>
+          <div class="service-tag">New service · $299 pilot · Up to 20 calls</div>
+          <h2 id="audit-banner-title">Why do some calls become booked jobs and others don't?</h2>
+          <p>AI Sales Call Conversion Audit: review your existing recorded calls to identify missed opportunities, objection-handling gaps, and practical coaching priorities. Pilot availability now.</p>
+        </div>
+        <a class="button" href="mailto:mnbentley@outlook.com?subject=Sales%20Call%20Conversion%20Audit%20Pilot">Ask about the $299 pilot</a>
+      </aside>
       <section id="projects" class="section" aria-labelledby="projects-title">
         <div class="section-head">
           <div><div class="section-kicker">Selected work</div><h2 id="projects-title">Proof in working systems, not promises.</h2></div>
